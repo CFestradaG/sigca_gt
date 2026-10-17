@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Nunito+Sans:wght@600;700;800&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Nunito+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-secondary":"#ffffff","on-primary-fixed":"#00201c","on-error-container":"#93000a","surface-container-high":"#ece8df","tertiary":"#455f73","tertiary-container":"#5d788d","on-primary":"#ffffff","primary-container":"#008376","on-tertiary-fixed":"#001e2f","secondary-fixed-dim":"#ffb4a2","surface-container-lowest":"#ffffff","on-surface-variant":"#3d4947","inverse-on-surface":"#f5f0e7","surface-container":"#f2ede4","on-tertiary-fixed-variant":"#2f4a5d","background":"#fef9f0","inverse-surface":"#32302a","secondary-fixed":"#ffdad2","surface-dim":"#ded9d1","on-primary-fixed-variant":"#005048","outline-variant":"#bcc9c6","surface-tint":"#006a60","surface":"#fef9f0","error-container":"#ffdad6","error":"#ba1a1a","surface-container-highest":"#e7e2d9","on-primary-container":"#f4fffb","on-tertiary-container":"#fcfcff","on-secondary-fixed-variant":"#83260e","on-tertiary":"#ffffff","on-background":"#1d1c16","tertiary-fixed-dim":"#aecae2","on-error":"#ffffff","primary-fixed":"#8cf5e4","on-surface":"#1d1c16","on-secondary-container":"#731a04","secondary":"#a33d23","outline":"#6d7a77","primary":"#00685d","secondary-container":"#ff8162","surface-variant":"#e7e2d9","tertiary-fixed":"#cae6fe","on-secondary-fixed":"#3c0700","surface-container-low":"#f8f3ea","inverse-primary":"#6fd8c8","primary-fixed-dim":"#6fd8c8","surface-bright":"#fef9f0"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"gutter-mobile":"1rem","margin-mobile":"1.25rem","space-md":"1rem","space-lg":"1.5rem","margin-tablet":"2rem","space-sm":"0.5rem","space-xs":"0.25rem","space-xl":"2.5rem","space-2xl":"4rem",margin:"3rem",gutter:"1.5rem"},fontFamily:{"headline-lg":["Nunito Sans"],"headline-md":["Nunito Sans"],"headline-lg-mobile":["Nunito Sans"],"label-lg":["Inter"],"body-lg":["Inter"],"body-md":["Inter"],"label-sm":["Inter"],"display-hero-mobile":["Nunito Sans"],"body-sm":["Inter"],"display-hero":["Nunito Sans"],"headline-sm":["Nunito Sans"],"label-md":["Inter"]},fontSize:{"headline-lg":["2.25rem",{lineHeight:"1.25",letterSpacing:"-0.015em",fontWeight:"700"}],"headline-md":["1.5rem",{lineHeight:"1.35",letterSpacing:"-0.01em",fontWeight:"700"}],"headline-lg-mobile":["1.75rem",{lineHeight:"1.3",letterSpacing:"-0.01em",fontWeight:"700"}],"label-lg":["1rem",{lineHeight:"1.25",letterSpacing:"0.01em",fontWeight:"600"}],"body-lg":["1.125rem",{lineHeight:"1.65",fontWeight:"400"}],"body-md":["1rem",{lineHeight:"1.6",fontWeight:"400"}],"label-sm":["0.75rem",{lineHeight:"1.2",letterSpacing:"0.02em",fontWeight:"600"}],"display-hero-mobile":["2.25rem",{lineHeight:"1.2",letterSpacing:"-0.01em",fontWeight:"800"}],"body-sm":["0.875rem",{lineHeight:"1.55",fontWeight:"400"}],"display-hero":["3.25rem",{lineHeight:"1.15",letterSpacing:"-0.02em",fontWeight:"800"}],"headline-sm":["1.25rem",{lineHeight:"1.4",fontWeight:"600"}],"label-md":["0.875rem",{lineHeight:"1.25",letterSpacing:"0.01em",fontWeight:"600"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between"><div class="flex flex-col h-full overflow-hidden"><div class="p-space-lg flex items-center gap-space-sm"><div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-on-primary-container shadow-sm"><span class="material-symbols-outlined text-[24px]">hearing</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight leading-none">Centro Armonía</span><span class="font-label-sm text-label-sm text-on-surface-variant font-normal leading-tight mt-1">Salud Auditiva y Emocional</span></div></div><div class="flex-1 overflow-y-auto px-space-md space-y-space-md"><div class="px-space-sm pt-space-xs"><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Gestión Clínica</span></div><nav class="space-y-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-xl"><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Dashboard</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="pacientes" href="#"><span class="material-symbols-outlined text-[20px]">patient_list</span><span>Pacientes</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="responsables" href="#"><span class="material-symbols-outlined text-[20px]">family_restroom</span><span>Responsables</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="profesionales" href="#"><span class="material-symbols-outlined text-[20px]">medical_services</span><span>Profesionales</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="servicios" href="#"><span class="material-symbols-outlined text-[20px]">stethoscope</span><span>Servicios</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="solicitudes" href="#"><span class="material-symbols-outlined text-[20px]">pending_actions</span><span>Solicitudes</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="citas" href="#"><span class="material-symbols-outlined text-[20px]">event_available</span><span>Citas</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="calendario" href="#"><span class="material-symbols-outlined text-[20px]">calendar_month</span><span>Calendario</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="materiales" href="#"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span>Materiales</span></a></nav><div class="px-space-sm pt-space-md"><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Administración &amp; Finanzas</span></div><nav class="space-y-1 pb-space-lg" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-xl"><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="pagos" href="#"><span class="material-symbols-outlined text-[20px]">payments</span><span>Pagos</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="caja-diaria" href="#"><span class="material-symbols-outlined text-[20px]">point_of_sale</span><span>Caja Diaria</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="contenido" href="#"><span class="material-symbols-outlined text-[20px]">article</span><span>Contenido</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="usuarios" href="#"><span class="material-symbols-outlined text-[20px]">manage_accounts</span><span>Usuarios</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="mensajes" href="#"><span class="material-symbols-outlined text-[20px]">chat</span><span>Mensajes</span></a></nav></div><div class="p-space-md bg-surface-container rounded-t-xl mx-space-sm mb-space-sm flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="w-2.5 h-2.5 rounded-full bg-primary inline-block"></span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Sede Central GT</span></div><span class="font-label-sm text-label-sm text-outline">En línea v2.4</span></div></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-lg flex-1 max-w-2xl"><div class="flex items-center gap-space-xs bg-surface-container px-space-md py-1.5 rounded-xl text-on-surface"><span class="material-symbols-outlined text-[20px] text-primary">location_on</span><span class="font-label-md text-label-md font-semibold">Zona 10 - Sixtino II</span><span class="material-symbols-outlined text-[18px] text-outline">expand_more</span></div><div class="relative flex-1"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[20px] text-outline">search</span><input class="w-full bg-surface-container-lowest pl-10 pr-space-md py-2 rounded-xl text-on-surface placeholder:text-outline text-body-sm font-body-sm focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Buscar paciente, expediente o cita clínica..." type="text"/></div></div><div class="flex items-center gap-space-lg"><div class="hidden xl:flex items-center gap-space-xs text-on-surface-variant"><span class="material-symbols-outlined text-[18px] text-primary">calendar_today</span><span class="font-label-md text-label-md">Jueves, 24 Octubre 2024</span></div><div class="h-6 w-px bg-surface-container-highest hidden xl:block"></div><button aria-label="Notificaciones" class="relative p-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-secondary"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex flex-col text-right"><span class="font-label-md text-label-md font-semibold text-on-surface leading-tight">Licda. Sofía Morales</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Coord. Administrativa &amp; Caja</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="relative pt-16 bg-surface min-h-[calc(100vh-4rem)] w-full px-space-lg py-space-lg"><div class="flex flex-col w-full space-y-space-xl">
+<!-- Interactive State Sync Script -->
+<script>
+    // Active Navigation sync in App Shell
+    document.addEventListener("DOMContentLoaded", () => {
+      const navLinks = document.querySelectorAll('aside nav a');
+      navLinks.forEach(link => {
+        if (link.getAttribute('data-path') === 'caja-diaria') {
+          link.classList.remove('text-on-surface-variant', 'hover:bg-surface-container-high', 'hover:text-on-surface');
+          link.classList.add('bg-primary-container', 'text-on-primary-container', 'font-semibold', 'rounded-xl');
+        }
+      });
+    });
+
+    let isBoxClosed = false;
+
+    function toggleBoxState() {
+      isBoxClosed = !isBoxClosed;
+      const openBadge = document.getElementById("badge-caja-abierta");
+      const closedBadge = document.getElementById("badge-caja-cerrada");
+      const bannerAvisoCerrada = document.getElementById("banner-aviso-cerrada");
+      const actionButtons = document.getElementById("action-buttons-container");
+      const btnCloseAction = document.getElementById("btn-efectuar-cierre");
+      const toggleSimBtn = document.getElementById("btn-toggle-sim");
+      const formInputs = document.querySelectorAll(".caja-input-control");
+      const watermark = document.getElementById("sello-conciliado");
+
+      if (isBoxClosed) {
+        openBadge.classList.add("hidden");
+        closedBadge.classList.remove("hidden");
+        bannerAvisoCerrada.classList.remove("hidden");
+        watermark.classList.remove("hidden");
+        btnCloseAction.classList.add("opacity-50", "pointer-events-none");
+        toggleSimBtn.innerHTML = `<span class="material-symbols-outlined text-[18px]">lock_open</span><span>Reabrir Turno (Simulación)</span>`;
+        formInputs.forEach(input => input.setAttribute("disabled", "true"));
+      } else {
+        openBadge.classList.remove("hidden");
+        closedBadge.classList.add("hidden");
+        bannerAvisoCerrada.classList.add("hidden");
+        watermark.classList.add("hidden");
+        btnCloseAction.classList.remove("opacity-50", "pointer-events-none");
+        toggleSimBtn.innerHTML = `<span class="material-symbols-outlined text-[18px]">lock_clock</span><span>Simular Caja Cerrada</span>`;
+        formInputs.forEach(input => input.removeAttribute("disabled"));
+      }
+    }
+
+    function calculateDenominations() {
+      const q200 = (parseInt(document.getElementById("deno-200")?.value) || 0) * 200;
+      const q100 = (parseInt(document.getElementById("deno-100")?.value) || 0) * 100;
+      const q50 = (parseInt(document.getElementById("deno-50")?.value) || 0) * 50;
+      const q20 = (parseInt(document.getElementById("deno-20")?.value) || 0) * 20;
+      const q10 = (parseInt(document.getElementById("deno-10")?.value) || 0) * 10;
+      const q5 = (parseInt(document.getElementById("deno-5")?.value) || 0) * 5;
+      const qmonedas = parseFloat(document.getElementById("deno-monedas")?.value) || 0;
+
+      const totalContado = q200 + q100 + q50 + q20 + q10 + q5 + qmonedas;
+      const esperado = 1950.00;
+      const diff = totalContado - esperado;
+
+      const displayContado = document.getElementById("total-contado-display");
+      const displayDiff = document.getElementById("diff-display");
+      const diffBadge = document.getElementById("diff-badge");
+      const justifContainer = document.getElementById("justificacion-container");
+
+      if (displayContado) displayContado.innerText = "Q " + totalContado.toFixed(2);
+      if (displayDiff) {
+        if (diff === 0) {
+          displayDiff.innerText = "Q 0.00";
+          diffBadge.className = "px-3 py-1 rounded-full text-label-sm font-label-sm bg-primary/10 text-primary flex items-center gap-1.5";
+          diffBadge.innerHTML = `<span class="material-symbols-outlined text-[16px]">check_circle</span>CUADRATURA EXACTA`;
+          if (justifContainer) justifContainer.classList.add("hidden");
+        } else if (diff < 0) {
+          displayDiff.innerText = "-Q " + Math.abs(diff).toFixed(2);
+          diffBadge.className = "px-3 py-1 rounded-full text-label-sm font-label-sm bg-error-container text-on-error-container flex items-center gap-1.5";
+          diffBadge.innerHTML = `<span class="material-symbols-outlined text-[16px]">warning</span>DIFERENCIA: FALTANTE`;
+          if (justifContainer) justifContainer.classList.remove("hidden");
+        } else {
+          displayDiff.innerText = "+Q " + diff.toFixed(2);
+          diffBadge.className = "px-3 py-1 rounded-full text-label-sm font-label-sm bg-secondary-container text-on-secondary-container flex items-center gap-1.5";
+          diffBadge.innerHTML = `<span class="material-symbols-outlined text-[16px]">add_circle</span>DIFERENCIA: SOBRANTE`;
+          if (justifContainer) justifContainer.classList.remove("hidden");
+        }
+      }
+    }
+
+    function presetCuadratura(tipo) {
+      if (tipo === 'exacta') {
+        document.getElementById("deno-200").value = 4; // 800
+        document.getElementById("deno-100").value = 7; // 700
+        document.getElementById("deno-50").value = 6;  // 300
+        document.getElementById("deno-20").value = 5;  // 100
+        document.getElementById("deno-10").value = 4;  // 40
+        document.getElementById("deno-5").value = 1;   // 5
+        document.getElementById("deno-monedas").value = 5.00; // 5 = total 1950.00
+      } else if (tipo === 'faltante') {
+        document.getElementById("deno-200").value = 4; // 800
+        document.getElementById("deno-100").value = 7; // 700
+        document.getElementById("deno-50").value = 6;  // 300
+        document.getElementById("deno-20").value = 5;  // 100
+        document.getElementById("deno-10").value = 3;  // 30 (faltan 10)
+        document.getElementById("deno-5").value = 1;   // 5
+        document.getElementById("deno-monedas").value = 5.00; // 5 = total 1940.00
+      } else if (tipo === 'sobrante') {
+        document.getElementById("deno-200").value = 4; // 800
+        document.getElementById("deno-100").value = 7; // 700
+        document.getElementById("deno-50").value = 6;  // 300
+        document.getElementById("deno-20").value = 5;  // 100
+        document.getElementById("deno-10").value = 5;  // 50 (+10)
+        document.getElementById("deno-5").value = 2;   // 10 (+5)
+        document.getElementById("deno-monedas").value = 5.00; // 5 = total 1965.00
+      }
+      calculateDenominations();
+    }
+
+    function openModalCierre() {
+      const modal = document.getElementById("modal-cierre-overlay");
+      if (modal) modal.classList.remove("hidden");
+    }
+
+    function closeModalCierre() {
+      const modal = document.getElementById("modal-cierre-overlay");
+      if (modal) modal.classList.add("hidden");
+    }
+
+    function filterTable(metodo) {
+      const buttons = document.querySelectorAll(".filter-btn");
+      buttons.forEach(btn => {
+        btn.classList.remove("bg-primary", "text-on-primary");
+        btn.classList.add("bg-surface-container-high", "text-on-surface-variant");
+      });
+      event.currentTarget.classList.remove("bg-surface-container-high", "text-on-surface-variant");
+      event.currentTarget.classList.add("bg-primary", "text-on-primary");
+
+      const rows = document.querySelectorAll("#tabla-movimientos tbody tr");
+      rows.forEach(row => {
+        const metodoCell = row.getAttribute("data-metodo");
+        if (metodo === 'all' || metodoCell === metodo) {
+          row.style.display = "";
+        } else {
+          row.style.display = "none";
+        }
+      });
+    }
+  </script>
+<!-- 1. ENCABEZADO DE PÁGINA & CONTROL DE TURNO -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg pb-space-sm">
+<div class="space-y-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-semibold">Administración Financiera &amp; Control Clínico</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Zona 10, Edificio Sixtino II</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Control y Conciliación de Caja Diaria</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+        Arqueo de turnos, registro de movimientos clínicos por método de cobro y cuadratura contable en Quetzales (Q) para auditoría inmediata.
+      </p>
+</div>
+<!-- Badges de Estado & Botones de Acción -->
+<div class="flex flex-wrap items-center gap-space-md">
+<!-- Badge Estado En Vivo -->
+<div class="flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full" id="badge-caja-abierta">
+<span class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+</span>
+<span class="font-label-sm text-label-sm text-primary font-bold tracking-wide">CAJA ABIERTA • TURNO MATUTINO</span>
+</div>
+<div class="hidden flex items-center gap-2 bg-error/10 px-4 py-2 rounded-full" id="badge-caja-cerrada">
+<span class="h-3 w-3 rounded-full bg-error inline-block"></span>
+<span class="font-label-sm text-label-sm text-error font-bold tracking-wide">CAJA CERRADA • AUDITADA</span>
+</div>
+<!-- Conmutador simulador de estado -->
+<button class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-surface-container-high text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors text-label-sm font-label-sm" id="btn-toggle-sim" onclick="toggleBoxState()">
+<span class="material-symbols-outlined text-[18px]">lock_clock</span>
+<span>Simular Caja Cerrada</span>
+</button>
+<!-- Botón Registro Rápido -->
+<button class="caja-input-control flex items-center gap-2 px-4 py-2.5 rounded-xl bg-surface-container-lowest text-primary shadow-sm hover:bg-surface-container-low transition-all font-label-md text-label-md">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>+ Movimiento / Ajuste</span>
+</button>
+<!-- Botón Imprimir Arqueo -->
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-surface-container-lowest text-on-surface-variant shadow-sm hover:text-on-surface hover:bg-surface-container-low transition-all font-label-md text-label-md" onclick="window.print()">
+<span class="material-symbols-outlined text-[20px]">print</span>
+<span>Imprimir Arqueo</span>
+</button>
+<!-- Acción Principal: Efectuar Cierre -->
+<button class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary text-on-primary hover:bg-[#005048] shadow-md hover:shadow-lg transition-all font-label-md text-label-md" id="btn-efectuar-cierre" onclick="openModalCierre()">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+<span>Efectuar Cierre de Caja</span>
+</button>
+</div>
+</div>
+<!-- 5. ESTADO DE CAJA CERRADA (AVISO INFORMATIVO Y MODO SOLO LECTURA) -->
+<div class="hidden rounded-2xl bg-surface-container-high p-space-lg shadow-sm" id="banner-aviso-cerrada">
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-error/15 text-error flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px]">lock_person</span>
+</div>
+<div class="space-y-1 flex-1">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-error">⚠️ CAJA CERRADA • TURNO FINALIZADO Y CONCILIADO</h3>
+<span class="font-label-sm text-label-sm px-3 py-1 bg-surface-container-lowest text-error font-bold rounded-lg shadow-sm">SOLO LECTURA</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Cierre realizado a las <strong>18:30 hrs</strong> por <strong>Licda. Sofía Morales</strong> y refrendado por <strong>Lic. Roberto Cifuentes</strong>. No se pueden registrar nuevos cobros, reversiones ni emitir comprobantes de turno. Para pacientes imprevistos de emergencia clínica, solicite la activación de un turno extraordinario desde Supervisión.
+        </p>
+</div>
+</div>
+</div>
+<!-- 2. RESUMEN DE APERTURA DE CAJA -->
+<div class="rounded-2xl bg-surface-container-lowest p-space-lg shadow-sm relative overflow-hidden">
+<!-- Watermark Sello Conciliado (Visible cuando está cerrada) -->
+<div class="hidden absolute right-12 top-6 rotate-[-12deg] pointer-events-none select-none opacity-20" id="sello-conciliado">
+<div class="p-4 rounded-2xl text-center">
+<span class="font-headline-lg text-headline-lg font-black tracking-widest text-primary uppercase">CONCILIADO &amp; CERRADO</span>
+<p class="font-label-sm text-label-sm text-primary tracking-widest uppercase">AUDITORÍA CENTRAL - SIRECA GT</p>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="w-14 h-14 rounded-2xl bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[32px]">account_balance_wallet</span>
+</div>
+<div class="space-y-0.5">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Folio Oficial</span>
+<span class="font-label-md text-label-md font-semibold text-primary px-2 py-0.5 rounded bg-primary/10">#CAJA-2024-1024-M</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Turno Matutino Clínico</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Apertura: 07:45 AM • Jueves, 24 de Octubre 2024</p>
+</div>
+</div>
+<!-- Metadatos de la Apertura -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-lg w-full lg:w-auto">
+<div class="p-3 rounded-xl bg-surface-container-low space-y-1">
+<span class="font-label-sm text-label-sm text-outline block">Fondo Fijo (Caja Chica)</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Q 500.00</span>
+<span class="font-body-sm text-label-sm text-on-surface-variant block">Efectivo para cambio</span>
+</div>
+<div class="p-3 rounded-xl bg-surface-container-low space-y-1">
+<span class="font-label-sm text-label-sm text-outline block">Cajero Responsable</span>
+<span class="font-label-md text-label-md font-bold text-on-surface block truncate">Licda. Sofía Morales</span>
+<span class="font-body-sm text-label-sm text-on-surface-variant block">Cajero #01 - Sixtino II</span>
+</div>
+<div class="p-3 rounded-xl bg-surface-container-low space-y-1">
+<span class="font-label-sm text-label-sm text-outline block">Supervisor que Autorizó</span>
+<span class="font-label-md text-label-md font-bold text-on-surface block truncate">Lic. Roberto Cifuentes</span>
+<span class="font-body-sm text-label-sm text-on-surface-variant block">Coord. Administrativa</span>
+</div>
+<div class="p-3 rounded-xl bg-surface-container-low space-y-1">
+<span class="font-label-sm text-label-sm text-outline block">Sede &amp; Gaveta</span>
+<span class="font-label-md text-label-md font-bold text-primary block">Gaveta Clínica A-02</span>
+<span class="font-body-sm text-label-sm text-on-surface-variant block">Zona 10 - Nivel 6</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 3. PANEL DE INGRESOS DEL DÍA POR MÉTODO DE PAGO (QUETZALES) -->
+<div class="space-y-space-md">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Consolidado de Cobros por Método</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">18 servicios médicos y terapéuticos cobrados durante el turno actual</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface-variant">Total Ingresos Turno:</span>
+<span class="font-headline-md text-headline-md font-extrabold text-primary">Q 6,450.00</span>
+</div>
+</div>
+<!-- 4 Tarjetas de Métodos -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Tarjeta 1: Efectivo -->
+<div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between space-y-4 hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[26px]">payments</span>
+</div>
+<span class="px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container text-on-surface-variant">
+            4 cobros
+          </span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Cobros en Efectivo</span>
+<div class="font-headline-md text-headline-md text-on-surface font-bold mt-0.5">Q 1,450.00</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">22.5% del total recaudado</p>
+</div>
+<div class="pt-2 bg-surface-container-low -mx-space-lg -mb-space-lg p-3 px-space-lg rounded-b-2xl flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-outline">En Gaveta + Base:</span>
+<span class="font-bold text-primary">Q 1,950.00</span>
+</div>
+</div>
+<!-- Tarjeta 2: Tarjeta POS -->
+<div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between space-y-4 hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="w-12 h-12 rounded-xl bg-[#5d788d]/10 text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[26px]">credit_card</span>
+</div>
+<span class="px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container text-on-surface-variant">
+            7 cobros
+          </span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Tarjeta POS Débito/Crédito</span>
+<div class="font-headline-md text-headline-md text-on-surface font-bold mt-0.5">Q 2,800.00</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Terminales VISA / BAC / BI</p>
+</div>
+<div class="pt-2 bg-surface-container-low -mx-space-lg -mb-space-lg p-3 px-space-lg rounded-b-2xl flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-outline">Comisión est. (2.5%):</span>
+<span class="font-semibold text-on-surface-variant">Q 70.00</span>
+</div>
+</div>
+<!-- Tarjeta 3: Transferencias Bancarias / ACH -->
+<div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between space-y-4 hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="w-12 h-12 rounded-xl bg-[#008376]/10 text-[#008376] flex items-center justify-center">
+<span class="material-symbols-outlined text-[26px]">account_balance</span>
+</div>
+<span class="px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container text-on-surface-variant">
+            5 transferencias
+          </span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Transferencias / ACH</span>
+<div class="font-headline-md text-headline-md text-on-surface font-bold mt-0.5">Q 1,650.00</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Banco Industrial &amp; Banrural</p>
+</div>
+<div class="pt-2 bg-surface-container-low -mx-space-lg -mb-space-lg p-3 px-space-lg rounded-b-2xl flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-outline">Estado en banca:</span>
+<span class="font-semibold text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>Confirmadas
+          </span>
+</div>
+</div>
+<!-- Tarjeta 4: Boletas de Depósito -->
+<div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between space-y-4 hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="w-12 h-12 rounded-xl bg-secondary-container/30 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[26px]">receipt_long</span>
+</div>
+<span class="px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container text-on-surface-variant">
+            2 boletas
+          </span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Depósito Monetario</span>
+<div class="font-headline-md text-headline-md text-on-surface font-bold mt-0.5">Q 550.00</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Comprobantes físicos validados</p>
+</div>
+<div class="pt-2 bg-surface-container-low -mx-space-lg -mb-space-lg p-3 px-space-lg rounded-b-2xl flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-outline">Verificación física:</span>
+<span class="font-semibold text-secondary">2 de 2 selladas</span>
+</div>
+</div>
+</div>
+<!-- Composición Porcentual y Desglose Visual -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm space-y-2">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant">
+<span>Composición del Flujo de Caja (Total: Q 6,450.00)</span>
+<div class="flex items-center gap-4">
+<span class="flex items-center gap-1"><span class="w-3 h-3 rounded-full bg-primary inline-block"></span> POS (43.4%)</span>
+<span class="flex items-center gap-1"><span class="w-3 h-3 rounded-full bg-tertiary-container inline-block"></span> Transferencia (25.6%)</span>
+<span class="flex items-center gap-1"><span class="w-3 h-3 rounded-full bg-[#008376] inline-block"></span> Efectivo (22.5%)</span>
+<span class="flex items-center gap-1"><span class="w-3 h-3 rounded-full bg-secondary-container inline-block"></span> Depósito (8.5%)</span>
+</div>
+</div>
+<div class="w-full h-3 bg-surface-container rounded-full overflow-hidden flex">
+<div class="h-full bg-primary" style="width: 43.4%"></div>
+<div class="h-full bg-tertiary-container" style="width: 25.6%"></div>
+<div class="h-full bg-[#008376]" style="width: 22.5%"></div>
+<div class="h-full bg-secondary-container" style="width: 8.5%"></div>
+</div>
+</div>
+</div>
+<!-- 4. SECCIÓN INTERACTIVA DE ARQUEO FÍSICO Y CONCILIACIÓN IN SITU -->
+<div class="rounded-2xl bg-surface-container-lowest p-space-lg shadow-sm space-y-space-md">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm pb-space-xs">
+<div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Arqueo Físico y Desglose de Efectivo en Gaveta</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Conteo detallado por denominación nacional de Guatemala para cuadratura de gaveta física.
+        </p>
+</div>
+<!-- Quick Tester buttons for demo -->
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-outline">Simular:</span>
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-low hover:bg-surface-container text-label-sm font-label-sm text-on-surface" onclick="presetCuadratura('exacta')">Exacta (Q 0.00)</button>
+<button class="px-2.5 py-1 rounded-lg bg-error-container/40 hover:bg-error-container text-label-sm font-label-sm text-error" onclick="presetCuadratura('faltante')">Faltante (-Q10)</button>
+<button class="px-2.5 py-1 rounded-lg bg-secondary-container/40 hover:bg-secondary-container text-label-sm font-label-sm text-secondary" onclick="presetCuadratura('sobrante')">Sobrante (+Q15)</button>
+</div>
+</div>
+<!-- Denominaciones Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-space-sm">
+<!-- Q200 -->
+<div class="p-3 rounded-xl bg-surface-container-low space-y-1">
+<div class="flex justify-between items-center text-label-sm font-label-sm">
+<span class="text-on-surface-variant">Billetes</span>
+<span class="font-bold text-primary">Q 200</span>
+</div>
+<input class="caja-input-control w-full bg-surface-container-lowest text-center py-1.5 rounded-lg text-on-surface font-semibold text-body-md focus:outline-none focus:ring-1 focus:ring-primary" id="deno-200" min="0" oninput="calculateDenominations()" type="number" value="4"/>
+<span class="block text-center text-label-sm font-label-sm text-outline">Q 800.00</span>
+</div>
+<!-- Q100 -->
+<div class="p-3 rounded-xl bg-surface-container-low space-y-1">
+<div class="flex justify-between items-center text-label-sm font-label-sm">
+<span class="text-on-surface-variant">Billetes</span>
+<span class="font-bold text-primary">Q 100</span>
+</div>
+<input class="caja-input-control w-full bg-surface-container-lowest text-center py-1.5 rounded-lg text-on-surface font-semibold text-body-md focus:outline-none focus:ring-1 focus:ring-primary" id="deno-100" min="0" oninput="calculateDenominations()" type="number" value="7"/>
+<span class="block text-center text-label-sm font-label-sm text-outline">Q 700.00</span>
+</div>
+<!-- Q50 -->
+<div class="p-3 rounded-xl bg-surface-container-low space-y-1">
+<div class="flex justify-between items-center text-label-sm font-label-sm">
+<span class="text-on-surface-variant">Billetes</span>
+<span class="font-bold text-primary">Q 50</span>
+</div>
+<input class="caja-input-control w-full bg-surface-container-lowest text-center py-1.5 rounded-lg text-on-surface font-semibold text-body-md focus:outline-none focus:ring-1 focus:ring-primary" id="deno-50" min="0" oninput="calculateDenominations()" type="number" value="6"/>
+<span class="block text-center text-label-sm font-label-sm text-outline">Q 300.00</span>
+</div>
+<!-- Q20 -->
+<div class="p-3 rounded-xl bg-surface-container-low space-y-1">
+<div class="flex justify-between items-center text-label-sm font-label-sm">
+<span class="text-on-surface-variant">Billetes</span>
+<span class="font-bold text-primary">Q 20</span>
+</div>
+<input class="caja-input-control w-full bg-surface-container-lowest text-center py-1.5 rounded-lg text-on-surface font-semibold text-body-md focus:outline-none focus:ring-1 focus:ring-primary" id="deno-20" min="0" oninput="calculateDenominations()" type="number" value="5"/>
+<span class="block text-center text-label-sm font-label-sm text-outline">Q 100.00</span>
+</div>
+<!-- Q10 -->
+<div class="p-3 rounded-xl bg-surface-container-low space-y-1">
+<div class="flex justify-between items-center text-label-sm font-label-sm">
+<span class="text-on-surface-variant">Billetes</span>
+<span class="font-bold text-primary">Q 10</span>
+</div>
+<input class="caja-input-control w-full bg-surface-container-lowest text-center py-1.5 rounded-lg text-on-surface font-semibold text-body-md focus:outline-none focus:ring-1 focus:ring-primary" id="deno-10" min="0" oninput="calculateDenominations()" type="number" value="4"/>
+<span class="block text-center text-label-sm font-label-sm text-outline">Q 40.00</span>
+</div>
+<!-- Q5 -->
+<div class="p-3 rounded-xl bg-surface-container-low space-y-1">
+<div class="flex justify-between items-center text-label-sm font-label-sm">
+<span class="text-on-surface-variant">Billetes</span>
+<span class="font-bold text-primary">Q 5</span>
+</div>
+<input class="caja-input-control w-full bg-surface-container-lowest text-center py-1.5 rounded-lg text-on-surface font-semibold text-body-md focus:outline-none focus:ring-1 focus:ring-primary" id="deno-5" min="0" oninput="calculateDenominations()" type="number" value="1"/>
+<span class="block text-center text-label-sm font-label-sm text-outline">Q 5.00</span>
+</div>
+<!-- Monedas Mixtas -->
+<div class="p-3 rounded-xl bg-surface-container-low space-y-1">
+<div class="flex justify-between items-center text-label-sm font-label-sm">
+<span class="text-on-surface-variant">Monedas</span>
+<span class="font-bold text-primary">Q 1 / cts</span>
+</div>
+<input class="caja-input-control w-full bg-surface-container-lowest text-center py-1.5 rounded-lg text-on-surface font-semibold text-body-md focus:outline-none focus:ring-1 focus:ring-primary" id="deno-monedas" min="0" oninput="calculateDenominations()" step="0.25" type="number" value="5"/>
+<span class="block text-center text-label-sm font-label-sm text-outline">Q 5.00</span>
+</div>
+</div>
+<!-- Comparativa en Tiempo Real: Esperado vs Físico Contado -->
+<div class="p-space-lg rounded-2xl bg-surface-container-low flex flex-col md:flex-row items-center justify-between gap-space-lg">
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-lg w-full md:w-auto flex-1">
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase block">Efectivo Esperado en Sistema</span>
+<div class="font-headline-md text-headline-md text-on-surface font-extrabold mt-0.5">Q 1,950.00</div>
+<span class="font-body-sm text-label-sm text-on-surface-variant">(Q 500.00 Apertura + Q 1,450.00 Cobros)</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase block">Efectivo Físico Contado</span>
+<div class="font-headline-md text-headline-md text-primary font-extrabold mt-0.5" id="total-contado-display">Q 1,950.00</div>
+<span class="font-body-sm text-label-sm text-on-surface-variant">Sumatoria de gaveta física</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase block">Diferencia de Cuadratura</span>
+<div class="font-headline-md text-headline-md text-on-surface font-extrabold mt-0.5" id="diff-display">Q 0.00</div>
+<div class="mt-1 inline-flex items-center gap-1 px-3 py-1 rounded-full text-label-sm font-label-sm bg-primary/10 text-primary" id="diff-badge">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>CUADRATURA EXACTA
+          </div>
+</div>
+</div>
+<div class="w-full md:w-auto">
+<button class="w-full md:w-auto flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary text-on-primary font-label-md text-label-md hover:bg-[#005048] shadow-md transition-all" onclick="openModalCierre()">
+<span class="material-symbols-outlined text-[20px]">task_alt</span>
+<span>Validar y Proceder al Cierre</span>
+</button>
+</div>
+</div>
+<!-- Campo Condicional: Justificación de Descuadre (Aparece si hay faltante o sobrante) -->
+<div class="hidden p-space-md rounded-xl bg-error-container/20 space-y-2" id="justificacion-container">
+<div class="flex items-center gap-2 text-error font-label-md text-label-md">
+<span class="material-symbols-outlined text-[20px]">error</span>
+<span>Se detectó diferencia entre el sistema y la gaveta física (Campo Obligatorio de Auditoría)</span>
+</div>
+<textarea class="caja-input-control w-full p-3 rounded-xl bg-surface-container-lowest text-on-surface text-body-sm focus:outline-none focus:ring-1 focus:ring-error" placeholder="Ingrese motivo detallado del descuadre, autorización de supervisor o justificación de redondeo..." rows="2"></textarea>
+</div>
+</div>
+<!-- 6. LISTA DE MOVIMIENTOS DEL DÍA (TABLA DE AUDITORÍA) -->
+<div class="rounded-2xl bg-surface-container-lowest p-space-lg shadow-sm space-y-space-md">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Movimientos y Cobros Registrados en Turno</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Detalle de cada factura, comprobante y boleta emitida con su referencia bancaria</p>
+</div>
+<!-- Filtros por Método & Buscador -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="relative min-w-[240px]">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[18px] text-outline">search</span>
+<input class="w-full pl-9 pr-3 py-2 rounded-xl bg-surface-container text-body-sm focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Buscar por paciente, tutor o recibo..." type="text"/>
+</div>
+<div class="flex items-center gap-1 bg-surface-container p-1 rounded-xl">
+<button class="filter-btn px-3 py-1.5 rounded-lg text-label-sm font-label-sm bg-primary text-on-primary transition-all" onclick="filterTable('all')">Todos (18)</button>
+<button class="filter-btn px-3 py-1.5 rounded-lg text-label-sm font-label-sm bg-surface-container-high text-on-surface-variant transition-all" onclick="filterTable('efectivo')">Efectivo</button>
+<button class="filter-btn px-3 py-1.5 rounded-lg text-label-sm font-label-sm bg-surface-container-high text-on-surface-variant transition-all" onclick="filterTable('tarjeta')">Tarjeta</button>
+<button class="filter-btn px-3 py-1.5 rounded-lg text-label-sm font-label-sm bg-surface-container-high text-on-surface-variant transition-all" onclick="filterTable('transferencia')">Transferencia</button>
+<button class="filter-btn px-3 py-1.5 rounded-lg text-label-sm font-label-sm bg-surface-container-high text-on-surface-variant transition-all" onclick="filterTable('deposito')">Boleta</button>
+</div>
+</div>
+</div>
+<!-- Tabla de Auditoría -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse" id="tabla-movimientos">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+<th class="py-3 px-4 rounded-l-xl">Hora</th>
+<th class="py-3 px-4">No. Recibo</th>
+<th class="py-3 px-4">Paciente / Tutor</th>
+<th class="py-3 px-4">Servicio Clínico</th>
+<th class="py-3 px-4">Método de Cobro</th>
+<th class="py-3 px-4">Referencia / POS</th>
+<th class="py-3 px-4 text-right">Monto (Q)</th>
+<th class="py-3 px-4 text-center">Estado</th>
+<th class="py-3 px-4 text-right rounded-r-xl">Comprobante</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container font-body-sm text-body-sm text-on-surface">
+<!-- Fila 1 -->
+<tr class="hover:bg-surface-container-low transition-colors" data-metodo="transferencia">
+<td class="py-3.5 px-4 font-semibold text-outline">08:15 AM</td>
+<td class="py-3.5 px-4"><span class="font-mono font-semibold text-primary">REC-2024-8901</span></td>
+<td class="py-3.5 px-4">
+<div class="font-semibold text-on-surface">Mateo Méndez Carrera</div>
+<div class="text-label-sm text-on-surface-variant">Tutor: Claudia Carrera</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-label-sm bg-primary/10 text-primary">
+                Terapia Auditivo-Verbal (AVT)
+              </span>
+</td>
+<td class="py-3.5 px-4 font-semibold">Transferencia ACH</td>
+<td class="py-3.5 px-4 text-outline font-mono text-label-sm">BI: #90812490</td>
+<td class="py-3.5 px-4 text-right font-bold text-on-surface">Q 250.00</td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-label-sm bg-primary/10 text-primary font-semibold">VÁLIDO</span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button class="p-1.5 rounded-lg hover:bg-surface-container-high text-primary"><span class="material-symbols-outlined text-[18px]">receipt</span></button>
+</td>
+</tr>
+<!-- Fila 2 -->
+<tr class="hover:bg-surface-container-low transition-colors" data-metodo="tarjeta">
+<td class="py-3.5 px-4 font-semibold text-outline">08:45 AM</td>
+<td class="py-3.5 px-4"><span class="font-mono font-semibold text-primary">REC-2024-8902</span></td>
+<td class="py-3.5 px-4">
+<div class="font-semibold text-on-surface">Camila Figueroa R.</div>
+<div class="text-label-sm text-on-surface-variant">Tutor: Ing. Fernando Figueroa</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-label-sm bg-tertiary/10 text-tertiary">
+                Evaluación Neuropsicológica
+              </span>
+</td>
+<td class="py-3.5 px-4 font-semibold">Tarjeta POS VISA</td>
+<td class="py-3.5 px-4 text-outline font-mono text-label-sm">Auth #489201</td>
+<td class="py-3.5 px-4 text-right font-bold text-on-surface">Q 550.00</td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-label-sm bg-primary/10 text-primary font-semibold">VÁLIDO</span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button class="p-1.5 rounded-lg hover:bg-surface-container-high text-primary"><span class="material-symbols-outlined text-[18px]">receipt</span></button>
+</td>
+</tr>
+<!-- Fila 3 -->
+<tr class="hover:bg-surface-container-low transition-colors" data-metodo="efectivo">
+<td class="py-3.5 px-4 font-semibold text-outline">09:10 AM</td>
+<td class="py-3.5 px-4"><span class="font-mono font-semibold text-primary">REC-2024-8903</span></td>
+<td class="py-3.5 px-4">
+<div class="font-semibold text-on-surface">Rodrigo Solórzano Gómez</div>
+<div class="text-label-sm text-on-surface-variant">Paciente Adulto</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-label-sm bg-primary/10 text-primary">
+                Audiometría Tonal Clínica
+              </span>
+</td>
+<td class="py-3.5 px-4 font-semibold text-primary">Efectivo Físico</td>
+<td class="py-3.5 px-4 text-outline font-mono text-label-sm">Gaveta A-02</td>
+<td class="py-3.5 px-4 text-right font-bold text-on-surface">Q 350.00</td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-label-sm bg-primary/10 text-primary font-semibold">VÁLIDO</span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button class="p-1.5 rounded-lg hover:bg-surface-container-high text-primary"><span class="material-symbols-outlined text-[18px]">receipt</span></button>
+</td>
+</tr>
+<!-- Fila 4 -->
+<tr class="hover:bg-surface-container-low transition-colors" data-metodo="deposito">
+<td class="py-3.5 px-4 font-semibold text-outline">09:40 AM</td>
+<td class="py-3.5 px-4"><span class="font-mono font-semibold text-primary">REC-2024-8904</span></td>
+<td class="py-3.5 px-4">
+<div class="font-semibold text-on-surface">Valeria Castillo Paz</div>
+<div class="text-label-sm text-on-surface-variant">Tutor: Licda. Mariana Paz</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-label-sm bg-secondary-container/20 text-secondary">
+                Calibración de Implante Coclear
+              </span>
+</td>
+<td class="py-3.5 px-4 font-semibold">Depósito Monetario</td>
+<td class="py-3.5 px-4 text-outline font-mono text-label-sm">Boleta Banrural #77124</td>
+<td class="py-3.5 px-4 text-right font-bold text-on-surface">Q 400.00</td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-label-sm bg-primary/10 text-primary font-semibold">VÁLIDO</span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button class="p-1.5 rounded-lg hover:bg-surface-container-high text-primary"><span class="material-symbols-outlined text-[18px]">receipt</span></button>
+</td>
+</tr>
+<!-- Fila 5 -->
+<tr class="hover:bg-surface-container-low transition-colors" data-metodo="tarjeta">
+<td class="py-3.5 px-4 font-semibold text-outline">10:15 AM</td>
+<td class="py-3.5 px-4"><span class="font-mono font-semibold text-primary">REC-2024-8905</span></td>
+<td class="py-3.5 px-4">
+<div class="font-semibold text-on-surface">Emilio Alvarado Fuentes</div>
+<div class="text-label-sm text-on-surface-variant">Tutor: Dr. Hugo Alvarado</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-label-sm bg-tertiary/10 text-tertiary">
+                Psicoterapia Infantil Familiar
+              </span>
+</td>
+<td class="py-3.5 px-4 font-semibold">Tarjeta BAC Credomatic</td>
+<td class="py-3.5 px-4 text-outline font-mono text-label-sm">Auth #110932</td>
+<td class="py-3.5 px-4 text-right font-bold text-on-surface">Q 450.00</td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-label-sm bg-primary/10 text-primary font-semibold">VÁLIDO</span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button class="p-1.5 rounded-lg hover:bg-surface-container-high text-primary"><span class="material-symbols-outlined text-[18px]">receipt</span></button>
+</td>
+</tr>
+<!-- Fila 6 -->
+<tr class="hover:bg-surface-container-low transition-colors" data-metodo="efectivo">
+<td class="py-3.5 px-4 font-semibold text-outline">11:00 AM</td>
+<td class="py-3.5 px-4"><span class="font-mono font-semibold text-primary">REC-2024-8906</span></td>
+<td class="py-3.5 px-4">
+<div class="font-semibold text-on-surface">Lucía Samayoa Vela</div>
+<div class="text-label-sm text-on-surface-variant">Tutor: Carmen Vela</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-label-sm bg-primary/10 text-primary">
+                Sesión de Integración Sensorial
+              </span>
+</td>
+<td class="py-3.5 px-4 font-semibold text-primary">Efectivo Físico</td>
+<td class="py-3.5 px-4 text-outline font-mono text-label-sm">Gaveta A-02</td>
+<td class="py-3.5 px-4 text-right font-bold text-on-surface">Q 300.00</td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-label-sm bg-primary/10 text-primary font-semibold">VÁLIDO</span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button class="p-1.5 rounded-lg hover:bg-surface-container-high text-primary"><span class="material-symbols-outlined text-[18px]">receipt</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Paginador informativo -->
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant pt-space-xs">
+<span>Mostrando 6 de 18 registros del turno en curso</span>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1 rounded-lg bg-surface-container-low text-outline cursor-not-allowed">Anterior</button>
+<span class="font-semibold text-primary">Página 1 de 3</span>
+<button class="px-3 py-1 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface">Siguiente</button>
+</div>
+</div>
+</div>
+<!-- 7. HISTORIAL DE CAJAS ANTERIORES Y DEPÓSITOS BANCARIOS -->
+<div class="rounded-2xl bg-surface-container-lowest p-space-lg shadow-sm space-y-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Historial de Turnos y Cierres Anteriores</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Registro histórico de cierres depositados en cuentas bancarias de la clínica</p>
+</div>
+<button class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm transition-all">
+<span class="material-symbols-outlined text-[18px]">calendar_view_week</span>
+<span>Exportar Conciliación Mensual</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Tarjeta Turno Ayer: 23 Octubre -->
+<div class="p-space-md rounded-xl bg-surface-container-low space-y-3 flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase font-bold text-outline">Miércoles, 23 Oct 2024</span>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold mt-0.5">Turno Completo</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">#CAJA-2024-1023-C</span>
+</div>
+<span class="px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-primary/10 text-primary font-bold">
+            DEPOSITADA
+          </span>
+</div>
+<div class="space-y-1.5 text-body-sm">
+<div class="flex justify-between">
+<span class="text-outline">Apertura (Fondo Fijo):</span>
+<span class="font-semibold">Q 500.00</span>
+</div>
+<div class="flex justify-between">
+<span class="text-outline">Ingresos Totales:</span>
+<span class="font-bold text-on-surface">Q 8,920.00</span>
+</div>
+<div class="flex justify-between">
+<span class="text-outline">Efectivo Físico Liquidado:</span>
+<span class="font-semibold text-primary">Q 2,450.00</span>
+</div>
+<div class="flex justify-between items-center pt-1 border-t border-surface-container-high">
+<span class="text-outline">Cuadratura:</span>
+<span class="text-label-sm font-bold text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>Exacta (Q 0.00)
+            </span>
+</div>
+</div>
+<div class="pt-2 text-label-sm text-on-surface-variant">
+<div>Cajero: Licda. Sofía Morales</div>
+<div class="flex items-center justify-between mt-2 pt-2 border-t border-surface-container-high">
+<span class="text-outline">Boleta Depósito: BI #88219</span>
+<button class="text-primary hover:underline font-semibold flex items-center gap-0.5">
+<span>PDF</span>
+<span class="material-symbols-outlined text-[14px]">download</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Tarjeta Turno: 22 Octubre -->
+<div class="p-space-md rounded-xl bg-surface-container-low space-y-3 flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase font-bold text-outline">Martes, 22 Oct 2024</span>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold mt-0.5">Turno Completo</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">#CAJA-2024-1022-C</span>
+</div>
+<span class="px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-primary/10 text-primary font-bold">
+            DEPOSITADA
+          </span>
+</div>
+<div class="space-y-1.5 text-body-sm">
+<div class="flex justify-between">
+<span class="text-outline">Apertura (Fondo Fijo):</span>
+<span class="font-semibold">Q 500.00</span>
+</div>
+<div class="flex justify-between">
+<span class="text-outline">Ingresos Totales:</span>
+<span class="font-bold text-on-surface">Q 7,340.00</span>
+</div>
+<div class="flex justify-between">
+<span class="text-outline">Efectivo Físico Liquidado:</span>
+<span class="font-semibold text-primary">Q 1,825.00</span>
+</div>
+<div class="flex justify-between items-center pt-1 border-t border-surface-container-high">
+<span class="text-outline">Cuadratura:</span>
+<span class="text-label-sm font-bold text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>Sobrante (+Q 5.00)
+            </span>
+</div>
+</div>
+<div class="pt-2 text-label-sm text-on-surface-variant">
+<div>Cajero: Licda. Sofía Morales</div>
+<div class="flex items-center justify-between mt-2 pt-2 border-t border-surface-container-high">
+<span class="text-outline">Boleta Depósito: Banrural #44321</span>
+<button class="text-primary hover:underline font-semibold flex items-center gap-0.5">
+<span>PDF</span>
+<span class="material-symbols-outlined text-[14px]">download</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Tarjeta Turno: 21 Octubre -->
+<div class="p-space-md rounded-xl bg-surface-container-low space-y-3 flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase font-bold text-outline">Lunes, 21 Oct 2024</span>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold mt-0.5">Turno Completo</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">#CAJA-2024-1021-C</span>
+</div>
+<span class="px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-primary/10 text-primary font-bold">
+            DEPOSITADA
+          </span>
+</div>
+<div class="space-y-1.5 text-body-sm">
+<div class="flex justify-between">
+<span class="text-outline">Apertura (Fondo Fijo):</span>
+<span class="font-semibold">Q 500.00</span>
+</div>
+<div class="flex justify-between">
+<span class="text-outline">Ingresos Totales:</span>
+<span class="font-bold text-on-surface">Q 9,150.00</span>
+</div>
+<div class="flex justify-between">
+<span class="text-outline">Efectivo Físico Liquidado:</span>
+<span class="font-semibold text-primary">Q 2,100.00</span>
+</div>
+<div class="flex justify-between items-center pt-1 border-t border-surface-container-high">
+<span class="text-outline">Cuadratura:</span>
+<span class="text-label-sm font-bold text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>Exacta (Q 0.00)
+            </span>
+</div>
+</div>
+<div class="pt-2 text-label-sm text-on-surface-variant">
+<div>Cajero: Aux. Andrea Mejía</div>
+<div class="flex items-center justify-between mt-2 pt-2 border-t border-surface-container-high">
+<span class="text-outline">Boleta Depósito: BI #88190</span>
+<button class="text-primary hover:underline font-semibold flex items-center gap-0.5">
+<span>PDF</span>
+<span class="material-symbols-outlined text-[14px]">download</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 4b. MODAL / VENTANA FLOTANTE DE CIERRE DE CAJA -->
+<div class="hidden fixed inset-0 z-50 bg-inverse-surface/40 backdrop-blur-sm flex items-center justify-center p-4" id="modal-cierre-overlay">
+<div class="w-full max-w-2xl bg-surface-container-lowest rounded-2xl shadow-2xl p-space-lg space-y-space-md animate-in fade-in duration-200">
+<div class="flex items-center justify-between border-b border-surface-container pb-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">lock_reset</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Efectuar Cierre de Caja Definitivo</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Turno Matutino • Sede Sixtino II</p>
+</div>
+</div>
+<button class="p-2 rounded-xl text-outline hover:bg-surface-container hover:text-on-surface" onclick="closeModalCierre()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Resumen Cuantitativo del Cierre -->
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-space-md p-space-md rounded-xl bg-surface-container-low text-body-sm">
+<div>
+<span class="text-outline block text-label-sm">Fondo Inicial Gaveta:</span>
+<span class="font-bold text-on-surface">Q 500.00</span>
+</div>
+<div>
+<span class="text-outline block text-label-sm">Cobros Totales (18):</span>
+<span class="font-bold text-on-surface">Q 6,450.00</span>
+</div>
+<div>
+<span class="text-outline block text-label-sm">Efectivo en Gaveta:</span>
+<span class="font-bold text-primary">Q 1,950.00</span>
+</div>
+</div>
+<div class="space-y-space-sm">
+<label class="block font-label-md text-label-md text-on-surface">Observaciones del Cajero de Turno</label>
+<textarea class="w-full p-3 rounded-xl bg-surface-container text-body-sm text-on-surface focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Comentarios sobre el cierre, boletas pendientes o notas para el turno vespertino..." rows="3"></textarea>
+</div>
+<!-- Firmas / Credenciales de Cierre -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md p-space-md rounded-xl bg-surface-container-low">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm text-outline uppercase block">Cajero Responsable</span>
+<span class="font-label-md text-label-md font-bold text-on-surface block">Licda. Sofía Morales</span>
+<span class="text-label-sm text-on-surface-variant block">Token: #AUT-SM-9021-GT</span>
+</div>
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm text-outline uppercase block">Validación de Supervisor</span>
+<input class="w-full p-2 rounded-lg bg-surface-container-lowest text-body-sm focus:outline-none focus:ring-1 focus:ring-primary" placeholder="PIN de Supervisor" type="password"/>
+</div>
+</div>
+<div class="flex items-center justify-end gap-space-sm pt-space-xs border-t border-surface-container">
+<button class="px-5 py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-md text-label-md transition-all" onclick="closeModalCierre()">
+          Cancelar
+        </button>
+<button class="flex items-center gap-2 px-6 py-2.5 rounded-xl bg-primary text-on-primary hover:bg-[#005048] font-label-md text-label-md shadow-md transition-all" onclick="closeModalCierre(); toggleBoxState();">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Confirmar y Cerrar Caja Diaria</span>
+</button>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

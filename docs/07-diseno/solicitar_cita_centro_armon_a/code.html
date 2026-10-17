@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Nunito+Sans:wght@600;700;800&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary-fixed": "#ffdad2", "on-tertiary-container": "#fcfcff", "on-surface-variant": "#3d4947", "surface-tint": "#006a60", "primary-fixed-dim": "#6fd8c8", "on-tertiary-fixed": "#001e2f", "surface-variant": "#e7e2d9", "inverse-surface": "#32302a", "on-primary-fixed-variant": "#005048", "outline": "#6d7a77", "on-error-container": "#93000a", "on-primary-container": "#f4fffb", "surface-bright": "#fef9f0", "surface": "#fef9f0", "on-primary-fixed": "#00201c", "secondary-fixed-dim": "#ffb4a2", "background": "#fef9f0", "outline-variant": "#bcc9c6", "on-secondary-container": "#731a04", "inverse-primary": "#6fd8c8", "tertiary-fixed": "#cae6fe", "inverse-on-surface": "#f5f0e7", "primary-fixed": "#8cf5e4", "primary-container": "#008376", "secondary": "#a33d23", "tertiary": "#455f73", "on-secondary": "#ffffff", "on-secondary-fixed-variant": "#83260e", "on-secondary-fixed": "#3c0700", "surface-dim": "#ded9d1", "tertiary-fixed-dim": "#aecae2", "on-tertiary-fixed-variant": "#2f4a5d", "error": "#ba1a1a", "surface-container-lowest": "#ffffff", "error-container": "#ffdad6", "surface-container": "#f2ede4", "on-tertiary": "#ffffff", "on-background": "#1d1c16", "on-primary": "#ffffff", "primary": "#00685d", "on-error": "#ffffff", "surface-container-high": "#ece8df", "surface-container-low": "#f8f3ea", "tertiary-container": "#5d788d", "secondary-container": "#ff8162", "surface-container-highest": "#e7e2d9", "on-surface": "#1d1c16" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-mobile": "1.25rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "space-md": "1rem", "space-sm": "0.5rem", "space-xl": "2.5rem", "gutter": "1.5rem", "margin-tablet": "2rem", "margin": "3rem", "space-2xl": "4rem", "gutter-mobile": "1rem" }, "fontFamily": { "headline-lg-mobile": [ "Nunito Sans" ], "body-sm": [ "Inter" ], "headline-md": [ "Nunito Sans" ], "label-lg": [ "Inter" ], "label-sm": [ "Inter" ], "headline-sm": [ "Nunito Sans" ], "body-md": [ "Inter" ], "headline-lg": [ "Nunito Sans" ], "label-md": [ "Inter" ], "display-hero": [ "Nunito Sans" ], "body-lg": [ "Inter" ], "display-hero-mobile": [ "Nunito Sans" ] }, "fontSize": { "headline-lg-mobile": [ "1.75rem", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "body-sm": [ "0.875rem", { "lineHeight": "1.55", "fontWeight": "400" } ], "headline-md": [ "1.5rem", { "lineHeight": "1.35", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "label-lg": [ "1rem", { "lineHeight": "1.25", "letterSpacing": "0.01em", "fontWeight": "600" } ], "label-sm": [ "0.75rem", { "lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "600" } ], "headline-sm": [ "1.25rem", { "lineHeight": "1.4", "fontWeight": "600" } ], "body-md": [ "1rem", { "lineHeight": "1.6", "fontWeight": "400" } ], "headline-lg": [ "2.25rem", { "lineHeight": "1.25", "letterSpacing": "-0.015em", "fontWeight": "700" } ], "label-md": [ "0.875rem", { "lineHeight": "1.25", "letterSpacing": "0.01em", "fontWeight": "600" } ], "display-hero": [ "3.25rem", { "lineHeight": "1.15", "letterSpacing": "-0.02em", "fontWeight": "800" } ], "body-lg": [ "1.125rem", { "lineHeight": "1.65", "fontWeight": "400" } ], "display-hero-mobile": [ "2.25rem", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "800" } ] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="hidden md:block bg-surface-container-high py-space-xs text-on-surface-variant"><div class="max-w-[1200px] mx-auto px-gutter flex items-center justify-between font-label-sm text-label-sm"><div class="flex items-center gap-space-lg"><span>+502 2333-4500</span><span>WhatsApp Clínico</span><span>Zona 10 &amp; Zona 14, Cd. de Guatemala</span></div><div><span>Atención previa cita: Lunes a Sábado</span></div></div></div><div class="h-20 max-w-[1200px] mx-auto px-gutter flex items-center justify-between"><a class="flex items-center gap-space-sm group" data-path="inicio" href="#"><div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-on-primary-container font-headline-sm text-headline-sm font-bold">CA</div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface leading-tight tracking-tight">Centro Armonía</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-none">Psicología &amp; Estimulación Auditiva</span></div></a><nav class="hidden xl:flex items-center gap-space-md" data-active-classes="bg-primary-container text-on-primary-container font-bold rounded-lg px-3 py-2"><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="inicio" href="#">Inicio</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="mision-y-vision" href="#">Misión y visión</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="servicios" href="#">Servicios</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="contenido-educativo" href="#">Contenido educativo</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="corporativo" href="#">Corporativo</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="horarios" href="#">Horarios</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="contacto" href="#">Contacto</a></nav><div class="flex items-center gap-space-md"><a class="inline-flex items-center justify-center bg-secondary hover:bg-on-secondary-fixed-variant text-on-secondary font-label-md text-label-md px-space-lg py-3 rounded-xl transition-all shadow-[0_2px_8px_-2px_rgba(31,58,77,0.04)]" data-path="solicitar-cita" href="#">Solicitar cita</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Breadcrumb & Introduction Header Section -->
+<section class="w-full bg-surface-container-low/70 py-space-xl">
+<div class="max-w-[1200px] mx-auto px-gutter">
+<!-- Breadcrumb -->
+<nav aria-label="Migas de pan" class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant mb-space-md">
+<a class="hover:text-primary transition-colors flex items-center gap-1" data-path="inicio" href="#">
+<span class="material-symbols-outlined text-[16px]">home</span>
+<span>Inicio</span>
+</a>
+<span class="text-outline-variant font-bold">/</span>
+<span aria-current="page" class="text-primary font-semibold">Solicitar Cita</span>
+</nav>
+<!-- Badge & Hero Title -->
+<div class="flex flex-col items-start gap-space-sm max-w-[860px]">
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary-fixed/30 text-on-primary-fixed-variant font-label-sm text-label-sm shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span>Atención Clínica Personalizada • Ciudad de Guatemala</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+          Solicita tu Cita de Valoración o Sesión Terapéutica
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+          Completa el formulario para coordinar tu atención en nuestras sedes de Zona 10 (Médica), Zona 14 (Desarrollo Infantil) o en modalidad virtual. Nuestro equipo clínico te responderá para confirmar día y hora exacta.
+        </p>
+</div>
+<!-- Highlighted Clinical Notice Banner -->
+<div class="mt-space-lg bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col md:flex-row items-start gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center flex-shrink-0 text-secondary">
+<span class="material-symbols-outlined text-[28px]">notifications_active</span>
+</div>
+<div class="flex-1">
+<div class="inline-flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded bg-secondary-fixed/50 text-on-secondary-fixed text-label-sm font-label-sm font-semibold uppercase tracking-wider">Aviso importante</span>
+<span class="font-headline-sm text-headline-sm text-secondary font-bold">
+              Tu solicitud no reserva el horario; te contactaremos para confirmarlo
+            </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-normal">
+            Para brindarte la mejor atención y evitar tiempos de espera, una coordinadora clínica revisará tu motivo de consulta y te llamará o escribirá por WhatsApp en menos de 24 horas hábiles para fijar la cita definitiva.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Content Layout (Two Columns) -->
+<section class="w-full py-space-xl">
+<div class="max-w-[1200px] mx-auto px-gutter">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- Left & Center Column: Structured Form (7 Cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-xl">
+<form class="flex flex-col gap-space-xl" id="appointmentForm" onsubmit="event.preventDefault(); handleSubmit();">
+<!-- SECCIÓN 1: Datos del Solicitante / Paciente -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm pb-space-xs">
+<span class="w-7 h-7 rounded-full bg-primary/10 text-primary flex items-center justify-center font-label-md text-label-md font-bold">1</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Datos del Solicitante / Paciente</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Información de contacto para la confirmación de la cita</p>
+</div>
+</div>
+<!-- Beneficiario Selector -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface">¿Para quién es la consulta?</label>
+<div aria-label="Destinatario de la consulta" class="grid grid-cols-3 gap-space-sm" role="radiogroup">
+<label class="cursor-pointer">
+<input class="peer sr-only" name="recipient_type" onchange="updateBeneficiary('Adulto')" type="radio" value="adulto"/>
+<div class="px-3 py-2.5 rounded-xl bg-surface-container-low text-center font-label-md text-label-md text-on-surface-variant peer-checked:bg-primary peer-checked:text-on-primary transition-all shadow-sm">
+                      Adulto
+                    </div>
+</label>
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" name="recipient_type" onchange="updateBeneficiary('Niño / Adolescente')" type="radio" value="menor"/>
+<div class="px-3 py-2.5 rounded-xl bg-surface-container-low text-center font-label-md text-label-md text-on-surface-variant peer-checked:bg-primary peer-checked:text-on-primary transition-all shadow-sm">
+                      Niño / Adolescente
+                    </div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="recipient_type" onchange="updateBeneficiary('Evaluación Familiar')" type="radio" value="familiar"/>
+<div class="px-3 py-2.5 rounded-xl bg-surface-container-low text-center font-label-md text-label-md text-on-surface-variant peer-checked:bg-primary peer-checked:text-on-primary transition-all shadow-sm">
+                      Familiar
+                    </div>
+</label>
+</div>
+</div>
+<!-- Nombre Completo -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface flex justify-between" for="fullName">
+<span>Nombre completo del solicitante o tutor *</span>
+</label>
+<div class="relative">
+<input class="w-full h-12 px-4 rounded-xl bg-surface-container-low text-on-surface placeholder:text-on-surface-variant/60 font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all" id="fullName" placeholder="Licda. Carmen Estrada" required="" type="text"/>
+</div>
+</div>
+<!-- Correo Electrónico -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface" for="email">Correo electrónico *</label>
+<input class="w-full h-12 px-4 rounded-xl bg-surface-container-low text-on-surface placeholder:text-on-surface-variant/60 font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all" id="email" placeholder="carmen.estrada@ejemplo.com" required="" type="email"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">info</span>
+                  Enviaremos los detalles de la confirmación a esta dirección.
+                </span>
+</div>
+<!-- Teléfono / WhatsApp -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface" for="phone">Teléfono / WhatsApp de contacto *</label>
+<div class="flex items-center gap-2">
+<div class="h-12 px-3 rounded-xl bg-surface-container-high flex items-center justify-center font-label-md text-label-md text-on-surface flex-shrink-0">
+<span class="mr-1">🇬🇹</span> +502
+                  </div>
+<input class="w-full h-12 px-4 rounded-xl bg-surface-container-low text-on-surface placeholder:text-on-surface-variant/60 font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all" id="phone" pattern="[0-9]{4}-?[0-9]{4}" placeholder="5555-4321" required="" type="tel"/>
+</div>
+</div>
+</div>
+<!-- SECCIÓN 2: Selección del Servicio Clínico -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded-full bg-primary/10 text-primary flex items-center justify-center font-label-md text-label-md font-bold">2</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Servicio Clínico Requerido</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Selecciona el área de atención o valoración especializada</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold hidden sm:inline-block">6 Opciones disponibles</span>
+</div>
+<!-- Grid de Tarjetas de Servicios -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm" id="serviceOptions">
+<!-- Servicio 1 (Preseleccionado) -->
+<div class="service-card cursor-pointer p-4 rounded-xl transition-all relative flex flex-col justify-between gap-3 bg-primary/10 shadow-sm" data-service-id="1" onclick="selectService(this, 'Terapia Auditivo-Verbal (AVT / LSLS)', '50 min', 'Q 350', 'audiology')">
+<div class="flex items-start justify-between">
+<div class="w-8 h-8 rounded-lg bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">hearing</span>
+</div>
+<span class="service-check material-symbols-outlined text-primary text-[22px]">check_circle</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface text-[1.05rem] leading-snug">Terapia Auditivo-Verbal (AVT / LSLS)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">Para niños con auxiliares auditivos o implante coclear.</p>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 50 min
+                    </span>
+<span class="font-label-lg text-label-lg font-bold text-primary">Q 350</span>
+</div>
+</div>
+<!-- Servicio 2 -->
+<div class="service-card cursor-pointer p-4 rounded-xl transition-all relative flex flex-col justify-between gap-3 bg-surface-container-low hover:bg-surface-container-high" data-service-id="2" onclick="selectService(this, 'Psicoterapia Infantil y Terapia de Juego', '45 min', 'Q 320', 'toys')">
+<div class="flex items-start justify-between">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">toys</span>
+</div>
+<span class="service-check material-symbols-outlined text-outline-variant text-[22px]">radio_button_unchecked</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface text-[1.05rem] leading-snug">Psicoterapia Infantil y Terapia de Juego</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">Manejo de emociones, conducta y apego seguro.</p>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 45 min
+                    </span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Q 320</span>
+</div>
+</div>
+<!-- Servicio 3 -->
+<div class="service-card cursor-pointer p-4 rounded-xl transition-all relative flex flex-col justify-between gap-3 bg-surface-container-low hover:bg-surface-container-high" data-service-id="3" onclick="selectService(this, 'Consulta Psicológica para Adultos', '55 min', 'Q 300', 'psychology')">
+<div class="flex items-start justify-between">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">psychology</span>
+</div>
+<span class="service-check material-symbols-outlined text-outline-variant text-[22px]">radio_button_unchecked</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface text-[1.05rem] leading-snug">Consulta Psicológica para Adultos</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">Acompañamiento individual en ansiedad, duelo o estrés.</p>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 55 min
+                    </span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Q 300</span>
+</div>
+</div>
+<!-- Servicio 4 -->
+<div class="service-card cursor-pointer p-4 rounded-xl transition-all relative flex flex-col justify-between gap-3 bg-surface-container-low hover:bg-surface-container-high" data-service-id="4" onclick="selectService(this, 'Evaluación Integral del Neurodesarrollo y Lenguaje', '90 min', 'Q 750', 'analytics')">
+<div class="flex items-start justify-between">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">analytics</span>
+</div>
+<span class="service-check material-symbols-outlined text-outline-variant text-[22px]">radio_button_unchecked</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface text-[1.05rem] leading-snug">Evaluación del Neurodesarrollo y Lenguaje</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">Paquete clínico con batería estandarizada e informe.</p>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 90 min
+                    </span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Q 750</span>
+</div>
+</div>
+<!-- Servicio 5 -->
+<div class="service-card cursor-pointer p-4 rounded-xl transition-all relative flex flex-col justify-between gap-3 bg-surface-container-low hover:bg-surface-container-high" data-service-id="5" onclick="selectService(this, 'Orientación y Acompañamiento a Padres', '50 min', 'Q 280', 'family_restroom')">
+<div class="flex items-start justify-between">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">family_restroom</span>
+</div>
+<span class="service-check material-symbols-outlined text-outline-variant text-[22px]">radio_button_unchecked</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface text-[1.05rem] leading-snug">Orientación y Acompañamiento a Padres</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">Pautas de crianza respetuosa y manejo conductual en casa.</p>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 50 min
+                    </span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Q 280</span>
+</div>
+</div>
+<!-- Servicio 6 -->
+<div class="service-card cursor-pointer p-4 rounded-xl transition-all relative flex flex-col justify-between gap-3 bg-surface-container-low hover:bg-surface-container-high" data-service-id="6" onclick="selectService(this, 'Valoración Fonoaudiológica y Auditiva Inicial', '45 min', 'Q 350', 'volume_up')">
+<div class="flex items-start justify-between">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">volume_up</span>
+</div>
+<span class="service-check material-symbols-outlined text-outline-variant text-[22px]">radio_button_unchecked</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface text-[1.05rem] leading-snug">Valoración Auditiva Inicial</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">Cribado observacional de conducta auditiva y articulación.</p>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 45 min
+                    </span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Q 350</span>
+</div>
+</div>
+</div>
+</div>
+<!-- SECCIÓN 3: Preferencia de Fecha, Horario y Sede -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm pb-space-xs">
+<span class="w-7 h-7 rounded-full bg-primary/10 text-primary flex items-center justify-center font-label-md text-label-md font-bold">3</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Preferencia de Fecha, Horario y Sede</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Escoge la ventana temporal que mejor se ajuste a tu rutina</p>
+</div>
+</div>
+<!-- Selector de Fecha -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface" for="preferredDate">Fecha tentativa sugerida *</label>
+<div class="relative">
+<input class="w-full h-12 px-4 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all" id="preferredDate" min="2025-01-01" onchange="updateSummaryDate(this.value)" required="" type="date" value="2025-11-14"/>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+                  Atención disponible de Lunes a Sábado. Los domingos permanecemos cerrados.
+                </span>
+</div>
+<!-- Franja Horaria -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface">Franja horaria preferida *</label>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm" role="radiogroup">
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" name="time_slot" onchange="updateSummaryTime('Mañana (08:00 - 12:00)')" type="radio" value="Mañana (08:00 - 12:00)"/>
+<div class="p-3 rounded-xl bg-surface-container-low text-center font-label-md text-label-md text-on-surface-variant peer-checked:bg-primary peer-checked:text-on-primary transition-all shadow-sm">
+<span class="block font-bold">Mañana</span>
+<span class="text-label-sm font-label-sm opacity-90">08:00 - 12:00</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="time_slot" onchange="updateSummaryTime('Mediodía (12:00 - 14:00)')" type="radio" value="Mediodía (12:00 - 14:00)"/>
+<div class="p-3 rounded-xl bg-surface-container-low text-center font-label-md text-label-md text-on-surface-variant peer-checked:bg-primary peer-checked:text-on-primary transition-all shadow-sm">
+<span class="block font-bold">Mediodía</span>
+<span class="text-label-sm font-label-sm opacity-90">12:00 - 14:00</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="time_slot" onchange="updateSummaryTime('Tarde (14:00 - 18:00)')" type="radio" value="Tarde (14:00 - 18:00)"/>
+<div class="p-3 rounded-xl bg-surface-container-low text-center font-label-md text-label-md text-on-surface-variant peer-checked:bg-primary peer-checked:text-on-primary transition-all shadow-sm">
+<span class="block font-bold">Tarde</span>
+<span class="text-label-sm font-label-sm opacity-90">14:00 - 18:00</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Sede de Preferencia -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface">Sede o modalidad de atención *</label>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm" role="radiogroup">
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" name="venue_choice" onchange="updateSummaryVenue('Zona 10 — Sixtino II')" type="radio" value="Sede Zona 10 (Edificio Sixtino II)"/>
+<div class="p-3 rounded-xl bg-surface-container-low text-center font-label-md text-label-md text-on-surface-variant peer-checked:bg-primary peer-checked:text-on-primary transition-all shadow-sm h-full flex flex-col justify-center">
+<span class="block font-bold">Zona 10</span>
+<span class="text-label-sm font-label-sm opacity-90">Edificio Sixtino II</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="venue_choice" onchange="updateSummaryVenue('Zona 14 — Europlaza')" type="radio" value="Sede Zona 14 (Europlaza)"/>
+<div class="p-3 rounded-xl bg-surface-container-low text-center font-label-md text-label-md text-on-surface-variant peer-checked:bg-primary peer-checked:text-on-primary transition-all shadow-sm h-full flex flex-col justify-center">
+<span class="block font-bold">Zona 14</span>
+<span class="text-label-sm font-label-sm opacity-90">Europlaza Torre 2</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="venue_choice" onchange="updateSummaryVenue('Tele-atención Virtual')" type="radio" value="Tele-atención Virtual"/>
+<div class="p-3 rounded-xl bg-surface-container-low text-center font-label-md text-label-md text-on-surface-variant peer-checked:bg-primary peer-checked:text-on-primary transition-all shadow-sm h-full flex flex-col justify-center">
+<span class="block font-bold">Tele-atención</span>
+<span class="text-label-sm font-label-sm opacity-90">Virtual Segura</span>
+</div>
+</label>
+</div>
+</div>
+</div>
+<!-- SECCIÓN 4: Mensaje Adicional o Motivo de Consulta -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm pb-space-xs">
+<span class="w-7 h-7 rounded-full bg-primary/10 text-primary flex items-center justify-center font-label-md text-label-md font-bold">4</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Motivo de Consulta y Contexto Clínico</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Detalles que permitan al especialista preparar la sesión de antemano</p>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md text-on-surface" for="consultationDetails">Descripción breve o requerimientos particulares</label>
+<span class="font-label-sm text-label-sm text-on-surface-variant" id="charCount">0 / 400</span>
+</div>
+<textarea class="w-full p-4 rounded-xl bg-surface-container-low text-on-surface placeholder:text-on-surface-variant/60 font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all resize-none" id="consultationDetails" maxlength="400" oninput="updateCharCount(this)" placeholder="Cuéntanos brevemente la edad del paciente, si cuenta con diagnóstico o sospecha previa (ej. retraso de lenguaje, implante, ansiedad escolar) o necesidades de accesibilidad." rows="4"></textarea>
+</div>
+<!-- Consentimiento y Políticas -->
+<div class="pt-2">
+<label class="flex items-start gap-3 cursor-pointer group">
+<input class="mt-1 w-5 h-5 rounded-md text-primary focus:ring-primary accent-primary" id="privacyConsent" required="" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                    Acepto el tratamiento de datos para fines de agendamiento clínico bajo las directrices de secreto profesional de la Asociación Psicológica y regulaciones de salud de Guatemala.
+                  </span>
+</label>
+</div>
+<!-- Botón de Envío y Notas Legales -->
+<div class="flex flex-col gap-space-sm pt-space-sm">
+<button class="w-full h-14 rounded-xl bg-secondary hover:bg-on-secondary-fixed-variant text-on-secondary font-headline-sm text-headline-sm flex items-center justify-center gap-2 transition-all shadow-md hover:shadow-lg active:scale-[0.99]" type="submit">
+<span class="material-symbols-outlined text-[24px]">calendar_month</span>
+<span>Enviar Solicitud de Cita</span>
+</button>
+<div class="flex items-center justify-center gap-2 text-center">
+<span class="material-symbols-outlined text-[16px] text-primary">verified_user</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">
+                    Canal seguro y confidencial • Facturación FEL disponible para reembolso con aseguradoras en Guatemala.
+                  </p>
+</div>
+</div>
+</div>
+</form>
+</div>
+<!-- Right Column: Sticky Summary & Trust Elements (5 Cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg lg:sticky lg:top-24">
+<!-- Live Appointment Preview Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md border-t-4 border-primary">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Resumen preliminar</span>
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm text-on-surface-variant bg-surface-container-high px-2 py-0.5 rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> En revisión
+              </span>
+</div>
+<!-- Servicio Elegido -->
+<div class="flex items-start gap-space-sm bg-surface-container-low p-3.5 rounded-xl">
+<div class="w-10 h-10 rounded-lg bg-primary text-on-primary flex items-center justify-center flex-shrink-0" id="summaryServiceIcon">
+<span class="material-symbols-outlined text-[20px]">hearing</span>
+</div>
+<div class="flex-1 min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Servicio seleccionado</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface text-[1rem] truncate" id="summaryServiceName">
+                  Terapia Auditivo-Verbal (AVT / LSLS)
+                </h4>
+<div class="flex items-center gap-space-md mt-1 font-label-md text-label-md">
+<span class="text-on-surface-variant" id="summaryServiceDuration">50 min</span>
+<span class="text-outline-variant">•</span>
+<span class="font-bold text-primary" id="summaryServicePrice">Q 350</span>
+</div>
+</div>
+</div>
+<!-- Datos de Selección -->
+<div class="space-y-2.5 font-body-sm text-body-sm text-on-surface-variant pt-1">
+<div class="flex items-center justify-between py-1">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-outline">location_on</span> Sede:
+                </span>
+<span class="font-semibold text-on-surface text-right" id="summaryVenue">Zona 10 — Sixtino II</span>
+</div>
+<div class="flex items-center justify-between py-1">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-outline">event</span> Fecha tentativa:
+                </span>
+<span class="font-semibold text-on-surface" id="summaryDate">14 de Noviembre, 2025</span>
+</div>
+<div class="flex items-center justify-between py-1">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-outline">schedule</span> Horario sugerido:
+                </span>
+<span class="font-semibold text-on-surface" id="summaryTime">Mañana (08:00 - 12:00)</span>
+</div>
+<div class="flex items-center justify-between py-1">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-outline">person</span> Paciente:
+                </span>
+<span class="font-semibold text-on-surface" id="summaryBeneficiary">Niño / Adolescente</span>
+</div>
+</div>
+<div class="bg-surface-container-high/60 p-3 rounded-lg flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">info</span>
+<span>Los honorarios finales se abonan en clínica tras la sesión. Facturas autorizadas por SAT.</span>
+</div>
+</div>
+<!-- Trust & Clinical Guarantee Block -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">health_and_safety</span>
+              Garantías Clínicas Armonía
+            </h3>
+<ul class="flex flex-col gap-space-sm font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5 flex-shrink-0">check_circle</span>
+<span><strong>Profesionales Colegiados Activos:</strong> Acreditados por MSPAS, Colegio de Psicólogos y certificación internacional LSLS.</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5 flex-shrink-0">check_circle</span>
+<span><strong>Cero Tiempos Muertos:</strong> Espacios de consulta privada con protocolos estrictos de puntualidad y discreción.</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5 flex-shrink-0">check_circle</span>
+<span><strong>Reembolso con Aseguradoras:</strong> Emitimos facturación electrónica FEL compatible con El Roble, G&amp;T Continental, Seguros Universales, Pan-American y Mapfre.</span>
+</li>
+</ul>
+<!-- Clinical Photo Asset Showcase -->
+<div class="pt-2">
+<img class="w-full h-36 rounded-xl object-cover shadow-sm" data-alt="A bright and warm pediatric therapy room in Guatemala with natural wooden sensory toys, acoustic wall panels in earth tones, soft sunlight through large windows, clean clinical environment without cold hospital vibes, fostering calm and trust." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjDqInyGUIFfnTLWsGfu-QQT9IkCPpRuHLjunZieETsaDOgzcEhHOd5pS20CmQXjMkEQH9dvelLhcPkGdBd2uXRTdKEYYe36TG81xa77i12QCVcFK8zmcNwhxms3clxTJyp_N2HB65r0G9BowV77DYjmk0Y-P8xuMhOiHrpwaJgyLWrgCe7u42T4bc_9epaUrYljSd0jtxTdxKhkjUISLGKUvSOd3cOSLYYGh9uP7eMycUYsGK0I95"/>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-2 text-center italic">Instalaciones de neurodesarrollo adaptadas sensorialmente</p>
+</div>
+</div>
+<!-- Urgent Assistance / WhatsApp Direct Block -->
+<div class="bg-surface-container-high rounded-xl p-space-lg flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[20px]">support_agent</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface text-[1.1rem]">¿Requieres asistencia inmediata?</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Coordinación de citas y dudas operativas</p>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Si tienes una consulta urgente sobre citas de valoración o necesitas asistencia para agendar múltiples sesiones simultáneas:
+            </p>
+<a class="w-full h-12 rounded-xl bg-primary text-on-primary hover:bg-on-primary-fixed-variant flex items-center justify-center gap-2 font-label-md text-label-md transition-all shadow-sm" href="https://wa.me/50223334500" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span>WhatsApp Clínico (+502 2333-4500)</span>
+</a>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm pt-1">
+<span>PBX Clínico: +502 2333-4500</span>
+<span class="text-primary font-semibold">Lunes a Sábado</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Success Confirmation Modal (Interactive Simulation) -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/40 backdrop-blur-sm hidden items-center justify-center p-4" id="successModal">
+<div class="bg-surface-container-lowest max-w-md w-full rounded-2xl p-space-xl shadow-2xl flex flex-col items-center text-center gap-space-md animate-in fade-in zoom-in duration-200">
+<div class="w-16 h-16 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[36px]">check_circle</span>
+</div>
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface text-[1.6rem] leading-tight">¡Solicitud Enviada con Éxito!</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">
+          Hemos recibido tu requerimiento. Una coordinadora médica de Centro Armonía te contactará por WhatsApp o llamada en menos de 24 horas para validar tu cupo.
+        </p>
+</div>
+<div class="w-full bg-surface-container-low p-3.5 rounded-xl font-label-sm text-label-sm text-on-surface-variant text-left space-y-1">
+<p><strong>Número de folio:</strong> #CA-2025-<span id="folioNumber">8491</span></p>
+<p><strong>Confirmación enviada a:</strong> <span id="confirmedEmail">carmen.estrada@ejemplo.com</span></p>
+</div>
+<button class="w-full h-12 rounded-xl bg-primary hover:bg-on-primary-fixed-variant text-on-primary font-label-md text-label-md transition-all" onclick="closeSuccessModal()">
+        Entendido, volver a Inicio
+      </button>
+</div>
+</div>
+<!-- Inline Client-side Micro-interactions -->
+<script>
+    function selectService(cardElement, serviceName, duration, price, iconName) {
+      // Clear visual state from all cards
+      const allCards = document.querySelectorAll('.service-card');
+      allCards.forEach(c => {
+        c.classList.remove('bg-primary/10', 'shadow-sm');
+        c.classList.add('bg-surface-container-low');
+        const iconDiv = c.querySelector('div > .material-symbols-outlined').parentElement;
+        iconDiv.classList.remove('bg-primary', 'text-on-primary');
+        iconDiv.classList.add('bg-surface-container-high', 'text-on-surface');
+        const checkIcon = c.querySelector('.service-check');
+        checkIcon.textContent = 'radio_button_unchecked';
+        checkIcon.classList.remove('text-primary');
+        checkIcon.classList.add('text-outline-variant');
+        const priceSpan = c.querySelector('.font-bold');
+        priceSpan.classList.remove('text-primary');
+        priceSpan.classList.add('text-on-surface');
+      });
+
+      // Highlight selected
+      cardElement.classList.add('bg-primary/10', 'shadow-sm');
+      cardElement.classList.remove('bg-surface-container-low');
+      const activeIconDiv = cardElement.querySelector('div > .material-symbols-outlined').parentElement;
+      activeIconDiv.classList.add('bg-primary', 'text-on-primary');
+      activeIconDiv.classList.remove('bg-surface-container-high', 'text-on-surface');
+      const activeCheck = cardElement.querySelector('.service-check');
+      activeCheck.textContent = 'check_circle';
+      activeCheck.classList.add('text-primary');
+      activeCheck.classList.remove('text-outline-variant');
+      const activePrice = cardElement.querySelector('.font-bold');
+      activePrice.classList.add('text-primary');
+      activePrice.classList.remove('text-on-surface');
+
+      // Update right panel preview
+      document.getElementById('summaryServiceName').textContent = serviceName;
+      document.getElementById('summaryServiceDuration').textContent = duration;
+      document.getElementById('summaryServicePrice').textContent = price;
+      document.getElementById('summaryServiceIcon').querySelector('.material-symbols-outlined').textContent = iconName;
+    }
+
+    function updateBeneficiary(val) {
+      document.getElementById('summaryBeneficiary').textContent = val;
+    }
+
+    function updateSummaryVenue(venue) {
+      document.getElementById('summaryVenue').textContent = venue;
+    }
+
+    function updateSummaryTime(time) {
+      document.getElementById('summaryTime').textContent = time;
+    }
+
+    function updateSummaryDate(dateStr) {
+      if(!dateStr) return;
+      const parts = dateStr.split('-');
+      if(parts.length === 3) {
+        const d = new Date(parts[0], parts[1] - 1, parts[2]);
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('summaryDate').textContent = d.toLocaleDateString('es-ES', options);
+      }
+    }
+
+    function updateCharCount(textarea) {
+      const current = textarea.value.length;
+      document.getElementById('charCount').textContent = current + ' / 400';
+    }
+
+    function handleSubmit() {
+      const emailInput = document.getElementById('email').value;
+      document.getElementById('confirmedEmail').textContent = emailInput || 'tu correo registrado';
+      document.getElementById('folioNumber').textContent = Math.floor(1000 + Math.random() * 9000);
+      const modal = document.getElementById('successModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeSuccessModal() {
+      const modal = document.getElementById('successModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</div></main><footer class="w-full bg-surface-container-low text-on-surface"><div class="max-w-[1200px] mx-auto px-gutter py-space-2xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl"><div class="flex flex-col gap-space-md"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-xl bg-primary-container flex items-center justify-center text-on-primary-container font-headline-sm text-headline-sm font-bold">CA</div><span class="font-headline-sm text-headline-sm text-on-surface">Centro Armonía</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">Centro clínico integral de psicología, terapia auditivo-verbal y neurodesarrollo infantil y adulto en Guatemala. Espacios cálidos, humanizados y basados en evidencia científica.</p><div class="flex items-center gap-space-sm"><a class="w-9 h-9 rounded-full bg-surface flex items-center justify-center text-on-surface-variant hover:bg-primary-container hover:text-on-primary-container transition-all" href="#"><span class="material-symbols-outlined text-[18px]">public</span></a><a class="w-9 h-9 rounded-full bg-surface flex items-center justify-center text-on-surface-variant hover:bg-primary-container hover:text-on-primary-container transition-all" href="#"><span class="material-symbols-outlined text-[18px]">chat</span></a><a class="w-9 h-9 rounded-full bg-surface flex items-center justify-center text-on-surface-variant hover:bg-primary-container hover:text-on-primary-container transition-all" href="#"><span class="material-symbols-outlined text-[18px]">mail</span></a></div></div><div class="flex flex-col gap-space-sm"><h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Navegación</h3><ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-primary transition-colors" data-path="inicio" href="#">Inicio</a></li><li><a class="hover:text-primary transition-colors" data-path="mision-y-vision" href="#">Misión y visión institucional</a></li><li><a class="hover:text-primary transition-colors" data-path="servicios" href="#">Servicios de psicología y audición</a></li><li><a class="hover:text-primary transition-colors" data-path="contenido-educativo" href="#">Contenido y recursos educativos</a></li><li><a class="hover:text-primary transition-colors" data-path="corporativo" href="#">Convenios y programas corporativos</a></li><li><a class="hover:text-primary transition-colors" data-path="horarios" href="#">Horarios y aranceles (Q)</a></li><li><a class="hover:text-primary transition-colors" data-path="contacto" href="#">Ubicación y contacto</a></li></ul></div><div class="flex flex-col gap-space-sm"><h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Sedes en Guatemala</h3><div class="flex flex-col gap-space-md font-body-sm text-body-sm text-on-surface-variant"><div><p class="font-label-md text-label-md text-on-surface">Sede Zona 10 - Sixtino II</p><p>6a Avenida 6-63, Zona 10, Edificio Sixtino II, Ala Sur, Nivel 7</p><p class="text-label-sm font-label-sm text-primary mt-1">+502 2333-4500</p></div><div><p class="font-label-md text-label-md text-on-surface">Sede Zona 14 - Europlaza</p><p>5a Avenida 5-55, Zona 14, Complejo Europlaza, Torre 2, Nivel 11</p><p class="text-label-sm font-label-sm text-primary mt-1">+502 2333-4510</p></div></div></div><div class="flex flex-col gap-space-sm"><h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Horarios y Tarifas</h3><div class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant"><div class="flex justify-between py-1"><span>Lunes a Viernes:</span><span class="text-on-surface font-semibold">08:00 - 18:00</span></div><div class="flex justify-between py-1"><span>Sábados:</span><span class="text-on-surface font-semibold">08:00 - 13:00</span></div><div class="flex justify-between py-1"><span>Domingos:</span><span class="text-on-surface font-semibold">Cerrado</span></div></div><div class="mt-space-sm p-space-sm bg-surface rounded-xl"><p class="font-label-sm text-label-sm text-on-surface-variant">Evaluaciones diagnósticas y sesiones clínicas con honorarios oficiales en Quetzales (Q). Facturación médica autorizada por SAT.</p></div></div></div><div class="bg-surface-container py-space-md"><div class="max-w-[1200px] mx-auto px-gutter flex flex-col md:flex-row items-center justify-between gap-space-sm font-body-sm text-body-sm text-on-surface-variant"><div>© 2025 Centro Armonía. Todos los derechos reservados. Honorarios expresados en Quetzales (Q).</div><div class="flex items-center gap-space-md font-label-sm text-label-sm"><a class="hover:text-primary transition-colors" data-path="contacto" href="#">Aviso de Privacidad</a><a class="hover:text-primary transition-colors" data-path="contacto" href="#">Términos del Servicio</a><a class="hover:text-primary transition-colors" data-path="contacto" href="#">Directorio Médico</a></div></div></div></footer></body></html>

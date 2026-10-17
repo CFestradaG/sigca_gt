@@ -68,7 +68,7 @@ Variables mínimas: `MONGODB_URI` y `JWT_SECRET` (32+ caracteres). No se version
 
 ## Evidencias
 
-- Diseños y prototipos en la rama `docs`.
+- Diseños y prototipos en [`docs/07-diseno`](docs/07-diseno/).
 - Issues y PRs por hito, con criterios de aceptación.
 - Capturas del portal, administración, calendario, pagos y caja.
 - Resultados de `npm test`, Postman y build de producción.
