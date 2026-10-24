@@ -101,6 +101,11 @@ Para levantar tanto el servicio de MongoDB como la aplicación compilada con un 
 
 ```bash
 docker compose up --build -d
+- Diseños y prototipos en [`docs/07-diseno`](docs/07-diseno/).
+- Issues y PRs por hito, con criterios de aceptación.
+- Capturas del portal, administración, calendario, pagos y caja.
+- Resultados de `npm test`, Postman y build de producción.
+- Tag `v1.0.0` y ZIP de Canvas al cierre.
 
 # Ver registros en tiempo real
 docker compose logs -f

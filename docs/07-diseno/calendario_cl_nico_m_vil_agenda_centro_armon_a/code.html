@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Nunito+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-variant": "#e7e2d9", "error-container": "#ffdad6", "outline": "#6d7a77", "on-secondary": "#ffffff", "secondary": "#a33d23", "background": "#fef9f0", "surface-tint": "#006a60", "on-primary-container": "#f4fffb", "surface-container": "#f2ede4", "on-primary-fixed": "#00201c", "inverse-on-surface": "#f5f0e7", "on-secondary-fixed": "#3c0700", "outline-variant": "#bcc9c6", "surface-container-low": "#f8f3ea", "surface-container-highest": "#e7e2d9", "on-primary-fixed-variant": "#005048", "surface-bright": "#fef9f0", "tertiary-fixed": "#cae6fe", "on-primary": "#ffffff", "tertiary-fixed-dim": "#aecae2", "secondary-fixed": "#ffdad2", "surface-container-high": "#ece8df", "on-background": "#1d1c16", "primary-fixed-dim": "#6fd8c8", "tertiary-container": "#5d788d", "on-error-container": "#93000a", "primary-container": "#008376", "surface-container-lowest": "#ffffff", "on-surface": "#1d1c16", "error": "#ba1a1a", "inverse-surface": "#32302a", "on-secondary-fixed-variant": "#83260e", "surface": "#fef9f0", "on-tertiary-fixed": "#001e2f", "on-surface-variant": "#3d4947", "tertiary": "#455f73", "inverse-primary": "#6fd8c8", "surface-dim": "#ded9d1", "on-error": "#ffffff", "secondary-fixed-dim": "#ffb4a2", "primary-fixed": "#8cf5e4", "on-tertiary-container": "#fcfcff", "on-secondary-container": "#731a04", "on-tertiary-fixed-variant": "#2f4a5d", "primary": "#00685d", "on-tertiary": "#ffffff", "secondary-container": "#ff8162" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-sm": "0.5rem", "gutter-mobile": "1rem", "gutter": "1.5rem", "margin": "3rem", "space-lg": "1.5rem", "space-xl": "2.5rem", "space-xs": "0.25rem", "margin-mobile": "1.25rem", "space-md": "1rem", "space-2xl": "4rem", "margin-tablet": "2rem" }, "fontFamily": { "display-hero-mobile": ["Nunito Sans"], "headline-md": ["Nunito Sans"], "label-md": ["Inter"], "headline-sm": ["Nunito Sans"], "body-md": ["Inter"], "label-sm": ["Inter"], "display-hero": ["Nunito Sans"], "headline-lg": ["Nunito Sans"], "body-lg": ["Inter"], "label-lg": ["Inter"], "body-sm": ["Inter"], "headline-lg-mobile": ["Nunito Sans"] }, "fontSize": { "display-hero-mobile": ["2.25rem", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "800" }], "headline-md": ["1.5rem", { "lineHeight": "1.35", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-md": ["0.875rem", { "lineHeight": "1.25", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-sm": ["1.25rem", { "lineHeight": "1.4", "fontWeight": "600" }], "body-md": ["1rem", { "lineHeight": "1.6", "fontWeight": "400" }], "label-sm": ["0.75rem", { "lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "600" }], "display-hero": ["3.25rem", { "lineHeight": "1.15", "letterSpacing": "-0.02em", "fontWeight": "800" }], "headline-lg": ["2.25rem", { "lineHeight": "1.25", "letterSpacing": "-0.015em", "fontWeight": "700" }], "body-lg": ["1.125rem", { "lineHeight": "1.65", "fontWeight": "400" }], "label-lg": ["1rem", { "lineHeight": "1.25", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-sm": ["0.875rem", { "lineHeight": "1.55", "fontWeight": "400" }], "headline-lg-mobile": ["1.75rem", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#fef9f0;color:#1d1c16;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-20 px-gutter-mobile flex flex-col justify-center"><div class="flex items-center justify-between"><div class="flex items-center gap-space-xs"><div class="w-7 h-7 rounded-lg bg-primary-container/20 flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[20px]">hearing</span></div><span class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold">Armonía</span><div class="flex items-center bg-surface-container px-2 py-1 rounded-full gap-1 ml-1 cursor-pointer"><span class="material-symbols-outlined text-outline text-[14px]">location_on</span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Sede Central</span><span class="material-symbols-outlined text-outline text-[14px]">expand_more</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Buscar en clínica" class="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center text-on-surface-variant hover:text-on-surface rounded-full transition-colors"><span class="material-symbols-outlined text-[22px]">search</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div><div class="flex items-center justify-between pt-0.5"><h1 class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-semibold">Calendario Clínico</h1><span class="font-label-sm text-label-sm text-outline-variant bg-surface-container-high px-2 py-0.5 rounded-full">Admin</span></div></div></header><main class="flex flex-col relative w-full pt-20 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full relative">
+<!-- Top Switch View & Month Label -->
+<div class="px-gutter-mobile pt-space-xs pb-space-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">Octubre 2024</span>
+<span class="font-label-sm text-label-sm bg-primary/10 text-primary px-2 py-0.5 rounded-full font-medium">Semana 43</span>
+</div>
+<button class="flex items-center gap-1 bg-secondary text-on-secondary px-3 py-1.5 rounded-xl shadow-sm active:scale-95 transition-all" onclick="toggleQuickAppointmentModal()">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span class="font-label-sm text-label-sm font-semibold">+ Cita</span>
+</button>
+</div>
+<!-- View Switcher Tabs -->
+<div class="flex bg-surface-container p-1 rounded-xl w-full">
+<button class="flex-1 py-1.5 rounded-lg bg-surface-container-lowest text-primary shadow-sm font-label-md text-label-md font-bold text-center transition-all">Agenda</button>
+<button class="flex-1 py-1.5 rounded-lg text-on-surface-variant font-label-md text-label-md font-medium text-center transition-all hover:text-on-surface">Día</button>
+<button class="flex-1 py-1.5 rounded-lg text-on-surface-variant font-label-md text-label-md font-medium text-center transition-all hover:text-on-surface">Mes</button>
+</div>
+</div>
+<!-- Specialists Horizontal Filter -->
+<div class="w-full overflow-x-auto no-scrollbar pl-gutter-mobile pr-gutter-mobile py-space-xs flex items-center gap-2">
+<button class="flex items-center gap-1.5 bg-primary text-on-primary px-3 py-1.5 rounded-full shadow-sm whitespace-nowrap transition-all">
+<span class="material-symbols-outlined text-[16px]">groups</span>
+<span class="font-label-sm text-label-sm font-semibold">Todos (6)</span>
+</button>
+<button class="flex items-center gap-2 bg-surface-container-low hover:bg-surface-container text-on-surface px-2.5 py-1.5 rounded-full whitespace-nowrap transition-all">
+<div class="w-6 h-6 rounded-full bg-primary/20 text-primary flex items-center justify-center font-bold text-[10px]">EM</div>
+<div class="flex flex-col text-left">
+<span class="font-label-sm text-label-sm leading-tight font-semibold">Dra. Elena M.</span>
+<span class="text-[10px] text-outline leading-none">Fonoaudiología</span>
+</div>
+</button>
+<button class="flex items-center gap-2 bg-surface-container-low hover:bg-surface-container text-on-surface px-2.5 py-1.5 rounded-full whitespace-nowrap transition-all">
+<div class="w-6 h-6 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-bold text-[10px]">LA</div>
+<div class="flex flex-col text-left">
+<span class="font-label-sm text-label-sm leading-tight font-semibold">Licda. Lucía A.</span>
+<span class="text-[10px] text-outline leading-none">Psicología</span>
+</div>
+</button>
+<button class="flex items-center gap-2 bg-surface-container-low hover:bg-surface-container text-on-surface px-2.5 py-1.5 rounded-full whitespace-nowrap transition-all">
+<div class="w-6 h-6 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center font-bold text-[10px]">CM</div>
+<div class="flex flex-col text-left">
+<span class="font-label-sm text-label-sm leading-tight font-semibold">Lic. Carlos M.</span>
+<span class="text-[10px] text-outline leading-none">T. Ocupacional</span>
+</div>
+</button>
+</div>
+<!-- Weekly Horizontal Calendar Strip -->
+<div class="px-gutter-mobile py-space-sm">
+<div class="grid grid-cols-6 gap-1.5 bg-surface-container-low p-2 rounded-2xl shadow-sm">
+<!-- Lun 21 -->
+<div class="flex flex-col items-center py-2 px-1 rounded-xl text-on-surface-variant hover:bg-surface-container transition-all cursor-pointer">
+<span class="font-label-sm text-label-sm font-medium">Lun</span>
+<span class="font-headline-sm text-headline-sm font-bold my-0.5">21</span>
+<span class="w-4 h-4 rounded-full bg-surface-variant text-[10px] flex items-center justify-center font-semibold text-outline">4</span>
+</div>
+<!-- Mar 22 -->
+<div class="flex flex-col items-center py-2 px-1 rounded-xl text-on-surface-variant hover:bg-surface-container transition-all cursor-pointer">
+<span class="font-label-sm text-label-sm font-medium">Mar</span>
+<span class="font-headline-sm text-headline-sm font-bold my-0.5">22</span>
+<span class="w-4 h-4 rounded-full bg-surface-variant text-[10px] flex items-center justify-center font-semibold text-outline">5</span>
+</div>
+<!-- Mie 23 -->
+<div class="flex flex-col items-center py-2 px-1 rounded-xl text-on-surface-variant hover:bg-surface-container transition-all cursor-pointer">
+<span class="font-label-sm text-label-sm font-medium">Mié</span>
+<span class="font-headline-sm text-headline-sm font-bold my-0.5">23</span>
+<span class="w-4 h-4 rounded-full bg-surface-variant text-[10px] flex items-center justify-center font-semibold text-outline">7</span>
+</div>
+<!-- Jue 24 (Hoy Seleccionado) -->
+<div class="flex flex-col items-center py-2 px-1 rounded-xl bg-primary text-on-primary shadow-md cursor-pointer relative">
+<span class="font-label-sm text-label-sm font-bold">Jue</span>
+<span class="font-headline-sm text-headline-sm font-bold my-0.5">24</span>
+<span class="w-4 h-4 rounded-full bg-on-primary text-primary text-[10px] flex items-center justify-center font-bold">6</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary absolute -bottom-1 shadow-sm"></span>
+</div>
+<!-- Vie 25 -->
+<div class="flex flex-col items-center py-2 px-1 rounded-xl text-on-surface-variant hover:bg-surface-container transition-all cursor-pointer">
+<span class="font-label-sm text-label-sm font-medium">Vie</span>
+<span class="font-headline-sm text-headline-sm font-bold my-0.5">25</span>
+<span class="w-4 h-4 rounded-full bg-surface-variant text-[10px] flex items-center justify-center font-semibold text-outline">5</span>
+</div>
+<!-- Sab 26 -->
+<div class="flex flex-col items-center py-2 px-1 rounded-xl text-on-surface-variant hover:bg-surface-container transition-all cursor-pointer">
+<span class="font-label-sm text-label-sm font-medium">Sáb</span>
+<span class="font-headline-sm text-headline-sm font-bold my-0.5">26</span>
+<span class="w-4 h-4 rounded-full bg-surface-variant text-[10px] flex items-center justify-center font-semibold text-outline">3</span>
+</div>
+</div>
+</div>
+<!-- Day Header & Progress Summary -->
+<div class="px-gutter-mobile pt-space-xs pb-space-sm flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">event_available</span>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Jueves, 24 Octubre</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-2.5 py-1 rounded-full">6 programadas</span>
+</div>
+<!-- Timeline Agenda Container -->
+<div class="px-gutter-mobile flex flex-col gap-3 pb-8 relative">
+<!-- Cita 1: Mateo Méndez (EN 15 MIN - Prioridad interactiva) -->
+<div class="w-full bg-surface-container-lowest rounded-2xl p-4 shadow-sm hover:shadow-md transition-all active:scale-[0.99] cursor-pointer relative overflow-hidden group" onclick="openAppointmentSheet()">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary"></div>
+<!-- Time and Live Status -->
+<div class="flex items-center justify-between mb-2 pl-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">schedule</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">09:00 - 09:50 AM</span>
+<span class="bg-secondary/10 text-secondary text-[11px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1 animate-pulse">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> En 15 min
+          </span>
+</div>
+<span class="bg-primary/10 text-primary font-label-sm text-label-sm font-bold px-2.5 py-0.5 rounded-full">CONFIRMADA</span>
+</div>
+<!-- Patient & Specialist Card Content -->
+<div class="pl-2 flex flex-col gap-1.5">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-1.5">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Mateo Méndez</h3>
+<span class="font-label-sm text-label-sm bg-surface-container text-on-surface-variant px-1.5 py-0.5 rounded">6a • Pediátrico</span>
+</div>
+<p class="font-body-sm text-body-sm text-primary font-semibold flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">record_voice_over</span>
+              Terapia Auditivo-Verbal (AVT)
+            </p>
+</div>
+<div class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">touch_app</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 border-t-0 bg-surface-container-low p-2 rounded-xl text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-1 truncate">
+<span class="material-symbols-outlined text-[16px] text-outline">meeting_room</span>
+<span class="truncate">Dra. Elena Morales • <strong>Cubículo 704</strong></span>
+</div>
+<div class="flex items-center gap-1 shrink-0 font-bold text-secondary">
+<span>Q 350.00</span>
+<span class="text-[10px] font-normal text-outline">Pendiente</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Cita 2: Camila Figueroa (EN CONSULTA) -->
+<div class="w-full bg-surface-container-lowest rounded-2xl p-4 shadow-sm relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-secondary-container"></div>
+<div class="flex items-center justify-between mb-2 pl-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-outline text-[18px]">schedule</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">10:15 - 11:00 AM</span>
+</div>
+<span class="bg-secondary-container/20 text-on-secondary-container font-label-sm text-label-sm font-bold px-2.5 py-0.5 rounded-full flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> EN CONSULTA
+        </span>
+</div>
+<div class="pl-2 flex flex-col gap-1.5">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-1.5">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Camila Figueroa</h3>
+<span class="font-label-sm text-label-sm bg-surface-container text-on-surface-variant px-1.5 py-0.5 rounded">4a</span>
+</div>
+<p class="font-body-sm text-body-sm text-tertiary font-semibold flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">psychology</span>
+              Evaluación Neuropsicológica
+            </p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 bg-surface-container-low p-2 rounded-xl text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-1 truncate">
+<span class="material-symbols-outlined text-[16px] text-outline">meeting_room</span>
+<span class="truncate">Licda. Lucía Arévalo • <strong>Cubículo 702</strong></span>
+</div>
+<div class="flex items-center gap-1 shrink-0 font-bold text-primary">
+<span>Q 550.00</span>
+<span class="text-[10px] font-medium text-primary bg-primary/10 px-1 py-0.2 rounded">FEL Pagado</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Cita 3: Rodrigo Solórzano (PROGRAMADA - Teleatención) -->
+<div class="w-full bg-surface-container-lowest rounded-2xl p-4 shadow-sm relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-tertiary"></div>
+<div class="flex items-center justify-between mb-2 pl-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-outline text-[18px]">schedule</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">11:30 - 12:20 PM</span>
+</div>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold px-2.5 py-0.5 rounded-full">PROGRAMADA</span>
+</div>
+<div class="pl-2 flex flex-col gap-1.5">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-1.5">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Rodrigo Solórzano</h3>
+<span class="font-label-sm text-label-sm bg-surface-container text-on-surface-variant px-1.5 py-0.5 rounded">32a • Adultos</span>
+</div>
+<p class="font-body-sm text-body-sm text-tertiary font-semibold flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">headset_mic</span>
+              Psicoterapia Individual Adultos
+            </p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 bg-surface-container-low p-2 rounded-xl text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[16px]">video_camera_front</span>
+<span class="truncate font-semibold">Tele-atención (Google Meet)</span>
+</div>
+<div class="flex items-center gap-1 shrink-0 font-bold text-on-surface">
+<span>Q 350.00</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Cita 4: Sebastián Menchú (CONFIRMADA) -->
+<div class="w-full bg-surface-container-lowest rounded-2xl p-4 shadow-sm relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary"></div>
+<div class="flex items-center justify-between mb-2 pl-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-outline text-[18px]">schedule</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">14:00 - 15:00 PM</span>
+</div>
+<span class="bg-primary/10 text-primary font-label-sm text-label-sm font-bold px-2.5 py-0.5 rounded-full">CONFIRMADA</span>
+</div>
+<div class="pl-2 flex flex-col gap-1.5">
+<div>
+<div class="flex items-center gap-1.5">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Sebastián Menchú</h3>
+<span class="font-label-sm text-label-sm bg-surface-container text-on-surface-variant px-1.5 py-0.5 rounded">8a</span>
+</div>
+<p class="font-body-sm text-body-sm text-primary font-semibold flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">accessibility_new</span>
+            Integración Sensorial y Motricidad
+          </p>
+</div>
+<div class="flex items-center justify-between pt-2 bg-surface-container-low p-2 rounded-xl text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-1 truncate">
+<span class="material-symbols-outlined text-[16px] text-outline">room_preferences</span>
+<span class="truncate">Lic. Carlos Méndez • <strong>Sala Multisensorial</strong></span>
+</div>
+<div class="flex items-center gap-1 shrink-0 font-bold text-on-surface">
+<span>Q 350.00</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Cita 5: Lucas Barrios (REPROGRAMADA) -->
+<div class="w-full bg-surface-container-lowest rounded-2xl p-4 shadow-sm relative overflow-hidden opacity-95">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-tertiary-container"></div>
+<div class="flex items-center justify-between mb-2 pl-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-outline text-[18px]">schedule</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">15:30 - 16:30 PM</span>
+</div>
+<span class="bg-surface-variant text-on-surface-variant font-label-sm text-label-sm font-bold px-2.5 py-0.5 rounded-full">REPROGRAMADA</span>
+</div>
+<div class="pl-2 flex flex-col gap-1.5">
+<div>
+<div class="flex items-center gap-1.5">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Lucas Barrios</h3>
+<span class="font-label-sm text-label-sm bg-surface-container text-on-surface-variant px-1.5 py-0.5 rounded">3a</span>
+</div>
+<p class="font-body-sm text-body-sm text-tertiary-container font-semibold flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">hearing</span>
+            Audiometría Infantil y BERA
+          </p>
+</div>
+<div class="flex items-center justify-between pt-2 bg-surface-container-low p-2 rounded-xl text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-1 truncate">
+<span class="material-symbols-outlined text-[16px] text-outline">volume_off</span>
+<span class="truncate">Dr. Juan Estrada • <strong>Cabina Audiométrica</strong></span>
+</div>
+<div class="flex items-center gap-1 shrink-0 font-bold text-on-surface-variant">
+<span>Q 450.00</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Clinical Gentle Encouragement Card -->
+<div class="mx-gutter-mobile mb-6 bg-surface-container p-4 rounded-2xl flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold text-sm">Disponibilidad en Sede Central</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">2 cubículos disponibles para sobrecupo de emergencia auditiva hoy.</span>
+</div>
+</div>
+<!-- Interactive Backdrop Overlay for Sheet -->
+<div class="fixed inset-0 bg-inverse-surface/40 z-50 transition-opacity duration-300 opacity-0 pointer-events-none" id="modalBackdrop" onclick="closeAppointmentSheet()"></div>
+<!-- Bottom Action Sheet (Details Mateo Méndez) -->
+<div class="fixed left-0 right-0 bottom-0 z-50 transform translate-y-full transition-transform duration-300 ease-out flex flex-col bg-surface-container-lowest rounded-t-3xl shadow-2xl max-h-[85vh] overflow-y-auto" id="appointmentBottomSheet">
+<!-- Drag Handle -->
+<div class="w-full flex items-center justify-center pt-3 pb-1">
+<div class="w-12 h-1.5 rounded-full bg-outline-variant"></div>
+</div>
+<!-- Sheet Header -->
+<div class="px-gutter-mobile pt-2 pb-3 flex items-start justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="bg-primary/10 text-primary font-label-sm text-label-sm font-bold px-2 py-0.5 rounded-md">Cubículo 704</span>
+<span class="text-outline text-xs">Jue 24 Oct • 09:00 AM</span>
+</div>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface mt-1">Mateo Méndez (6a)</h3>
+<p class="font-body-sm text-body-sm text-primary font-semibold">Terapia Auditivo-Verbal (AVT)</p>
+</div>
+<button class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface" onclick="closeAppointmentSheet()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Patient Details & Family Contact Contact -->
+<div class="px-gutter-mobile py-2 flex flex-col gap-2.5">
+<div class="bg-surface-container-low p-3.5 rounded-2xl flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-bold">
+            CC
+          </div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">Tutor Responsable</span>
+<span class="font-headline-sm text-headline-sm text-sm font-bold text-on-surface">Sra. Carmen Carrera</span>
+<span class="font-body-sm text-body-sm text-outline text-xs">+502 4590-2184</span>
+</div>
+</div>
+<a aria-label="Enviar WhatsApp a la tutora" class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-sm active:scale-95 transition-all" href="https://wa.me/50245902184" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[22px]">chat</span>
+</a>
+</div>
+<!-- Financial Snapshot in Bottom Sheet -->
+<div class="grid grid-cols-2 gap-2">
+<div class="bg-surface-container-low p-3 rounded-xl flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">Honorario Consulta</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Q 350.00</span>
+<span class="font-body-sm text-body-sm text-secondary text-xs font-semibold">Pago en Recepción</span>
+</div>
+<div class="bg-surface-container-low p-3 rounded-xl flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">Especialista Asignada</span>
+<span class="font-label-md text-label-md font-bold text-on-surface truncate">Dra. Elena Morales</span>
+<span class="font-body-sm text-body-sm text-outline text-xs">Fonoaudióloga Colegiada</span>
+</div>
+</div>
+</div>
+<!-- Action Trigger Buttons -->
+<div class="p-gutter-mobile flex flex-col gap-2.5">
+<!-- Primary Green Action: Completar -->
+<button class="w-full h-12 bg-primary hover:bg-primary-container text-on-primary rounded-xl font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-md active:scale-[0.98] transition-all" onclick="showActionToast('¡Consulta registrada como completada!')">
+<span class="material-symbols-outlined text-[22px]">check_circle</span>
+        Completar Consulta
+      </button>
+<div class="grid grid-cols-2 gap-2">
+<!-- Confirmar Cita -->
+<button class="h-11 bg-surface-container hover:bg-surface-container-high text-primary rounded-xl font-label-md text-label-md font-bold flex items-center justify-center gap-1.5 transition-all" onclick="showActionToast('Cita re-confirmada vía SMS')">
+<span class="material-symbols-outlined text-[18px]">how_to_reg</span>
+          Confirmar
+        </button>
+<!-- Reprogramar Horario -->
+<button class="h-11 bg-surface-container hover:bg-surface-container-high text-on-surface rounded-xl font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5 transition-all" onclick="showActionToast('Abriendo selector de reprogramación...')">
+<span class="material-symbols-outlined text-[18px]">update</span>
+          Reprogramar
+        </button>
+</div>
+<!-- Quick access to file & Cancel action -->
+<div class="flex items-center gap-2 pt-1">
+<button class="flex-1 h-11 bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md font-semibold rounded-xl flex items-center justify-center gap-2" onclick="showActionToast('Cargando expediente pediátrico...')">
+<span class="material-symbols-outlined text-[20px] text-tertiary">folder_shared</span>
+          Ver Expediente
+        </button>
+<button class="h-11 px-4 bg-error-container/40 hover:bg-error-container text-error rounded-xl font-label-md text-label-md font-bold flex items-center justify-center gap-1" onclick="showActionToast('Proceso de cancelación iniciado')">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+          Cancelar
+        </button>
+</div>
+</div>
+<!-- Safe area padding for mobile bottom bar -->
+<div class="h-6"></div>
+</div>
+<!-- Notification Toast Feedback -->
+<div class="fixed top-24 left-1/2 -translate-x-1/2 z-50 bg-inverse-surface text-inverse-on-surface px-4 py-2.5 rounded-full shadow-lg flex items-center gap-2 opacity-0 pointer-events-none transition-all duration-300" id="toastNotification">
+<span class="material-symbols-outlined text-primary-fixed text-[20px]">check</span>
+<span class="font-label-sm text-label-sm font-medium" id="toastMessage">Acción completada con éxito</span>
+</div>
+</div>
+<script>
+  function openAppointmentSheet() {
+    const sheet = document.getElementById('appointmentBottomSheet');
+    const backdrop = document.getElementById('modalBackdrop');
+    if (sheet && backdrop) {
+      backdrop.classList.remove('opacity-0', 'pointer-events-none');
+      backdrop.classList.add('opacity-100');
+      sheet.classList.remove('translate-y-full');
+      sheet.classList.add('translate-y-0');
+    }
+  }
+
+  function closeAppointmentSheet() {
+    const sheet = document.getElementById('appointmentBottomSheet');
+    const backdrop = document.getElementById('modalBackdrop');
+    if (sheet && backdrop) {
+      backdrop.classList.remove('opacity-100');
+      backdrop.classList.add('opacity-0', 'pointer-events-none');
+      sheet.classList.remove('translate-y-0');
+      sheet.classList.add('translate-y-full');
+    }
+  }
+
+  function toggleQuickAppointmentModal() {
+    showActionToast('Abriendo creador de cita rápida...');
+  }
+
+  function showActionToast(message) {
+    const toast = document.getElementById('toastNotification');
+    const toastMsg = document.getElementById('toastMessage');
+    if (toast && toastMsg) {
+      toastMsg.innerText = message;
+      toast.classList.remove('opacity-0', 'pointer-events-none', '-translate-y-2');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      
+      setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', 'pointer-events-none', '-translate-y-2');
+      }, 2600);
+    }
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-semibold"><div class="flex justify-around items-center h-16 px-gutter-mobile"><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] gap-0.5 text-on-surface-variant transition-colors" data-path="calendario-clinico" href="#"><span class="material-symbols-outlined text-[22px]">calendar_month</span><span class="font-label-sm text-label-sm">Agenda</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] gap-0.5 text-on-surface-variant transition-colors" data-path="expedientes-pacientes" href="#"><span class="material-symbols-outlined text-[22px]">clinical_notes</span><span class="font-label-sm text-label-sm">Pacientes</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] gap-0.5 text-on-surface-variant transition-colors" data-path="nueva-cita-rapida" href="#"><div class="w-10 h-10 -mt-3 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-[0_4px_12px_rgba(163,61,35,0.3)]"><span class="material-symbols-outlined text-[22px]">add</span></div><span class="font-label-sm text-label-sm mt-0.5">Cita</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] gap-0.5 text-on-surface-variant transition-colors" data-path="caja-y-pagos" href="#"><span class="material-symbols-outlined text-[22px]">payments</span><span class="font-label-sm text-label-sm">Caja</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] gap-0.5 text-on-surface-variant transition-colors" data-path="gestion-especialistas" href="#"><span class="material-symbols-outlined text-[22px]">medical_services</span><span class="font-label-sm text-label-sm">Equipo</span></a></div></nav></body></html>
