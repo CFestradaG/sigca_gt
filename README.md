@@ -73,9 +73,14 @@ cd sigca_gt
 
 Crea el archivo de configuración a partir del ejemplo. En macOS o Linux:
 
+### 2. Variables de Entorno
+Copie el archivo de ejemplo:
 ```bash
 cp .env.example .env
 ```
+La suite cubre reglas de citas, pagos, caja, autorización financiera y correlativos. Pasa completa (`22/22`).
+
+---
 
 En Windows PowerShell:
 

@@ -1,0 +1,8 @@
+{
+  "name": "SIGCA - Centro Armonía",
+  "description": "Sistema Integral de Gestión de Citas y Atención para Centro Armonía: portal público de psicología y estimulación auditivo-verbal y sistema administrativo integral.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

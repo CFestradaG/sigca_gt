@@ -1,0 +1,340 @@
+{
+  "info": {
+    "_postman_id": "a9182374-98c2-4a57-b28e-173648912345",
+    "name": "SIGCA - Centro Armonía API REST",
+    "description": "Colección completa de pruebas para todos los módulos de la API de SIGCA (Centro Armonía):\n- Autenticación JWT y Roles\n- Pacientes y Responsables\n- Servicios Clínicos\n- Citas y Calendario\n- Solicitudes Públicas\n- Materiales Educativos\n- Pagos y Comprobantes\n- Caja Diaria y Arqueo\n- Contenido Institucional y Horarios\n- Mensajes de Contacto",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:3000/api", "type": "string" },
+    { "key": "adminToken", "value": "", "type": "string" },
+    { "key": "recepToken", "value": "", "type": "string" },
+    { "key": "profToken", "value": "", "type": "string" }
+  ],
+  "item": [
+    {
+      "name": "1. Autenticación y Usuarios",
+      "item": [
+        {
+          "name": "Login Administrador",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const json = pm.response.json();",
+                  "pm.test('Status code is 200', () => pm.response.to.have.status(200));",
+                  "pm.test('Token received', () => pm.expect(json.token).to.be.a('string'));",
+                  "if (json.token) pm.collectionVariables.set('adminToken', json.token);"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"smorales@centroarmonia.com.gt\",\n  \"password\": \"Admin123!\"\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/auth/login", "host": ["{{baseUrl}}"], "path": ["auth", "login"] }
+          }
+        },
+        {
+          "name": "Login Recepción",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const json = pm.response.json();",
+                  "if (json.token) pm.collectionVariables.set('recepToken', json.token);"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"recepcion@centroarmonia.com.gt\",\n  \"password\": \"Recep123!\"\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/auth/login", "host": ["{{baseUrl}}"], "path": ["auth", "login"] }
+          }
+        },
+        {
+          "name": "Login Profesional",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const json = pm.response.json();",
+                  "if (json.token) pm.collectionVariables.set('profToken', json.token);"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"acastillo@centroarmonia.com.gt\",\n  \"password\": \"Profe123!\"\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/auth/login", "host": ["{{baseUrl}}"], "path": ["auth", "login"] }
+          }
+        },
+        {
+          "name": "Consultar Mi Perfil (/me)",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }],
+            "url": { "raw": "{{baseUrl}}/auth/me", "host": ["{{baseUrl}}"], "path": ["auth", "me"] }
+          }
+        },
+        {
+          "name": "Listar Usuarios (Admin)",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }],
+            "url": { "raw": "{{baseUrl}}/usuarios", "host": ["{{baseUrl}}"], "path": ["usuarios"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "2. Pacientes y Responsables",
+      "item": [
+        {
+          "name": "Listar Pacientes",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }],
+            "url": { "raw": "{{baseUrl}}/pacientes", "host": ["{{baseUrl}}"], "path": ["pacientes"] }
+          }
+        },
+        {
+          "name": "Consultar Paciente con Historial y Citas",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }],
+            "url": { "raw": "{{baseUrl}}/pacientes/pac-1", "host": ["{{baseUrl}}"], "path": ["pacientes", "pac-1"] }
+          }
+        },
+        {
+          "name": "Registrar Nuevo Paciente",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{adminToken}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombres\": \"David Alexander\",\n  \"apellidos\": \"Ramírez Godoy\",\n  \"fechaNacimiento\": \"2018-09-14\",\n  \"sexo\": \"M\",\n  \"telefono\": \"+502 5432-1098\",\n  \"direccion\": \"Zona 12, Reformita, Ciudad de Guatemala\",\n  \"observaciones\": \"Paciente con diagnóstico de hipoacusia neurosensorial moderada\",\n  \"responsableIds\": [\"resp-1\"]\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/pacientes", "host": ["{{baseUrl}}"], "path": ["pacientes"] }
+          }
+        },
+        {
+          "name": "Desactivar Paciente (Eliminación Lógica)",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{adminToken}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"estado\": \"INACTIVO\"\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/pacientes/pac-9/estado", "host": ["{{baseUrl}}"], "path": ["pacientes", "pac-9", "estado"] }
+          }
+        },
+        {
+          "name": "Listar Responsables",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }],
+            "url": { "raw": "{{baseUrl}}/responsables", "host": ["{{baseUrl}}"], "path": ["responsables"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "3. Citas y Calendario",
+      "item": [
+        {
+          "name": "Listar Citas (con filtros)",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }],
+            "url": { "raw": "{{baseUrl}}/citas?fecha=2026-10-16", "host": ["{{baseUrl}}"], "path": ["citas"], "query": [{ "key": "fecha", "value": "2026-10-16" }] }
+          }
+        },
+        {
+          "name": "Programar Cita (Validación RN-01 a RN-04)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{adminToken}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pacienteId\": \"pac-1\",\n  \"servicioId\": \"srv-1\",\n  \"profesionalId\": \"usr-4\",\n  \"fecha\": \"2026-10-22\",\n  \"horaInicio\": \"10:00\",\n  \"observaciones\": \"Sesión de discriminación acústica\",\n  \"sede\": \"Sede Central - Zona 10\"\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/citas", "host": ["{{baseUrl}}"], "path": ["citas"] }
+          }
+        },
+        {
+          "name": "Consultar Saldo y Estado Financiero de Cita",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }],
+            "url": { "raw": "{{baseUrl}}/citas/cit-1/saldo", "host": ["{{baseUrl}}"], "path": ["citas", "cit-1", "saldo"] }
+          }
+        },
+        {
+          "name": "Cambiar Estado de Cita (Confirmar / Completar)",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{adminToken}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"estado\": \"CONFIRMADA\"\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/citas/cit-2/estado", "host": ["{{baseUrl}}"], "path": ["citas", "cit-2", "estado"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "4. Pagos y Caja Diaria",
+      "item": [
+        {
+          "name": "Consultar Caja Abierta Actual",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{recepToken}}" }],
+            "url": { "raw": "{{baseUrl}}/cajas/actual", "host": ["{{baseUrl}}"], "path": ["cajas", "actual"] }
+          }
+        },
+        {
+          "name": "Abrir Caja Diaria (RN-22)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{adminToken}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"montoInicialQ\": 200.00\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/cajas/abrir", "host": ["{{baseUrl}}"], "path": ["cajas", "abrir"] }
+          }
+        },
+        {
+          "name": "Registrar Pago (Efectivo / Transferencia / Tarjeta)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{recepToken}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"citaId\": \"cit-2\",\n  \"montoQ\": 150.00,\n  \"metodoPago\": \"EFECTIVO\",\n  \"concepto\": \"Abono inicial 50% Psicología\",\n  \"notas\": \"Pago en efectivo recibido en caja principal\"\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/pagos", "host": ["{{baseUrl}}"], "path": ["pagos"] }
+          }
+        },
+        {
+          "name": "Anulación Justificada de Pago (RN-19, RN-27)",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{adminToken}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"motivoAnulacion\": \"Error de digitación en método de pago solicitado por el paciente\"\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/pagos/pag-9/anular", "host": ["{{baseUrl}}"], "path": ["pagos", "pag-9", "anular"] }
+          }
+        },
+        {
+          "name": "Cerrar Caja Diaria con Arqueo (RF-11)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{recepToken}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"efectivoContadoQ\": 550.00,\n  \"observaciones\": \"Arqueo final del turno matutino\"\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/cajas/caj-1/cerrar", "host": ["{{baseUrl}}"], "path": ["cajas", "caj-1", "cerrar"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "5. Contenido Institucional, Horarios y Contacto",
+      "item": [
+        {
+          "name": "Obtener Contenido Institucional (Público)",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/contenido", "host": ["{{baseUrl}}"], "path": ["contenido"] }
+          }
+        },
+        {
+          "name": "Actualizar Misión y Visión (Admin)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{adminToken}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"mision\": \"Brindar atención especializada e interdisciplinaria en salud mental, neurodesarrollo y estimulación auditivo-verbal con calidez humana.\",\n  \"vision\": \"Ser el centro líder en Guatemala y la región en rehabilitación auditivo-verbal y psicología infantil.\"\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/contenido", "host": ["{{baseUrl}}"], "path": ["contenido"] }
+          }
+        },
+        {
+          "name": "Obtener Horarios Semanales",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/horarios", "host": ["{{baseUrl}}"], "path": ["horarios"] }
+          }
+        },
+        {
+          "name": "Enviar Mensaje de Contacto (Público)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Rodrigo Barillas\",\n  \"email\": \"rodrigo.barillas@gmail.com\",\n  \"telefono\": \"+502 4433-2211\",\n  \"asunto\": \"Consulta sobre costo de evaluación diagnóstica\",\n  \"mensaje\": \"Buenas tardes, me gustaría saber el procedimiento para agendar una evaluación neuropsicológica para mi hijo de 7 años.\"\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/contacto", "host": ["{{baseUrl}}"], "path": ["contacto"] }
+          }
+        }
+      ]
+    }
+  ]
+}
