@@ -1,0 +1,135 @@
+{
+  "info": {
+    "_postman_id": "6eb3eab1-2b1d-4084-8af7-a2db83d43a51",
+    "name": "Armonia",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58550633"
+  },
+  "item": [
+    {
+      "name": "health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://sd05qh5x-3000.use.devtunnels.ms/api/health",
+          "protocol": "https",
+          "host": [
+            "sd05qh5x-3000",
+            "use",
+            "devtunnels",
+            "ms"
+          ],
+          "path": [
+            "api",
+            "health"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"smorales@centroarmonia.com.gt\",\n  \"password\": \"Admin123!\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://sd05qh5x-3000.use.devtunnels.ms/api/auth/login",
+          "protocol": "https",
+          "host": [
+            "sd05qh5x-3000",
+            "use",
+            "devtunnels",
+            "ms"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "servicios",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{Base}}servicios",
+          "host": [
+            "{{Base}}servicios"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "perfil",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{Base}}auth/me",
+          "host": [
+            "{{Base}}auth"
+          ],
+          "path": [
+            "me"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "pacientes",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{Base}}pacientes",
+          "host": [
+            "{{Base}}pacientes"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "token",
+      "secret": true
+    },
+    {
+      "key": "base",
+      "value": ""
+    }
+  ]
+}

@@ -207,12 +207,128 @@ La tabla describe validaciones que aparecen en el código del backend integrado.
 
 ---
 
-## 📮 Colección Postman
+## 📮 Probar la API con Postman
 
-El archivo `SIGCA-Centro-Armonia.postman_collection.json` se encuentra en la raíz del repositorio. Incluye:
-- Manejo dinámico de variables de entorno (`baseUrl`, `adminToken`, `recepToken`, `profToken`).
-- Solicitudes organizadas por carpetas para todos los endpoints.
-- Scripts de prueba automatizados en JavaScript que guardan tokens al iniciar sesión y validan los estados de respuesta HTTP.
+La colección `SIGCA-Centro-Armonia.postman_collection.json` es opcional. También puedes crear solicitudes manualmente siguiendo esta guía; así no dependes de importar la colección.
+
+### URL base
+
+Con Docker Compose o `npm run dev`, la dirección local predeterminada es `http://localhost:3000`. Todas las rutas de API empiezan con `/api`. Si cambias `PORT` en `.env`, ajusta el puerto en Postman. Confirma primero que el servidor esté activo:
+
+```http
+GET http://localhost:3000/api/health
+```
+
+Debe responder `200 OK` y `{"status":"ok", ...}`. Postman no puede acceder a `localhost` si la API está corriendo en otra computadora; en ese caso usa la IP o el dominio de esa computadora.
+
+### Obtener un token JWT
+
+El token lo genera el servidor después de validar el correo y contraseña. No se crea manualmente ni se copia el valor de `JWT_SECRET` en Postman. `JWT_SECRET` firma y verifica los tokens en el backend; la API lo requiere en `.env` y debe tener al menos 32 caracteres.
+
+1. En Postman crea una solicitud `POST` a `http://localhost:3000/api/auth/login`.
+2. En **Body → raw → JSON**, envía las credenciales de una cuenta de demostración listada en la sección de instalación. Ejemplo para administrador:
+
+```json
+{
+  "email": "smorales@centroarmonia.com.gt",
+  "password": "Admin123!"
+}
+```
+
+3. Pulsa **Send**. Una respuesta correcta es `200 OK` y tiene esta forma:
+
+```json
+{
+  "success": true,
+  "token": "eyJ...",
+  "user": { "id": "...", "rol": "ADMIN" }
+}
+```
+
+4. Copia únicamente el valor de `token` de la respuesta. En otra solicitud privada, abre **Authorization**, elige **Bearer Token** y pega el valor en **Token**. Postman agregará `Authorization: Bearer <token>` automáticamente. También puedes crear una variable de entorno llamada `token` y usar `{{token}}` en ese campo.
+
+El JWT vence a las 24 horas. Si recibes `401 Token inválido o expirado`, inicia sesión otra vez. Un token de administrador, recepción o profesional conserva los permisos de ese rol; `403` indica que el usuario inició sesión pero su rol no puede realizar esa operación.
+
+### Solicitudes de ejemplo
+
+**Leer servicios públicos** (sin token):
+
+```http
+GET http://localhost:3000/api/servicios
+```
+
+**Consultar perfil** (requiere Bearer token):
+
+```http
+GET http://localhost:3000/api/auth/me
+Authorization: Bearer <token>
+```
+
+**Consultar pacientes** (requiere token; datos visibles dependen del rol):
+
+```http
+GET http://localhost:3000/api/pacientes
+Authorization: Bearer <token>
+```
+
+Para solicitudes con cuerpo JSON, selecciona **Body → raw → JSON**. Por ejemplo, una cita requiere un token de `ADMIN` o `RECEPCION`:
+
+```http
+POST http://localhost:3000/api/citas
+Authorization: Bearer <token>
+Content-Type: application/json
+```
+
+```json
+{
+  "pacienteId": "<id-paciente-existente>",
+  "servicioId": "<id-servicio-activo>",
+  "profesionalId": "<id-profesional-activo>",
+  "fecha": "AAAA-MM-DD",
+  "horaInicio": "10:00",
+  "sede": "Sede Central"
+}
+```
+
+Usa IDs existentes que obtengas de la respuesta de pacientes, servicios y usuarios; los IDs ilustrativos como `pac-1` no necesariamente existen en tu base de datos. La cita también debe cumplir horarios, disponibilidad y reglas de edad/responsables.
+
+### Endpoints disponibles
+
+Todas las rutas de esta tabla llevan el prefijo `http://localhost:3000`. “Token” significa que debes enviar el JWT como **Bearer Token**. Los roles se aplican además de la autenticación.
+
+| Área | Método y ruta | Acceso |
+|---|---|---|
+| Salud | `GET /api/health` | Público |
+| Autenticación | `POST /api/auth/login` | Público; devuelve token |
+| Autenticación | `GET /api/auth/me`, `PATCH /api/auth/me/avatar` | Token |
+| Usuarios | `GET /api/usuarios/directorio` | Token |
+| Usuarios | `GET /api/usuarios`, `GET /api/usuarios/:id`, `POST /api/usuarios`, `PUT /api/usuarios/:id`, `PATCH /api/usuarios/:id/password` | Token ADMIN |
+| Pacientes | `GET /api/pacientes`, `GET /api/pacientes/:id`, `GET /api/pacientes/:id/citas` | Token |
+| Pacientes | `POST /api/pacientes`, `PUT /api/pacientes/:id`, `PATCH /api/pacientes/:id/estado`, `GET /api/pacientes/:id/pagos` | Token ADMIN o RECEPCION; pagos solo ADMIN/RECEPCION |
+| Responsables | `GET /api/responsables`, `GET /api/responsables/:id` | Token |
+| Responsables | `POST /api/responsables`, `PUT /api/responsables/:id` | Token ADMIN o RECEPCION |
+| Servicios | `GET /api/servicios`, `GET /api/servicios/:id` | Público; `?all=true` incluye inactivos |
+| Servicios | `POST /api/servicios`, `PUT /api/servicios/:id`, `PATCH /api/servicios/:id/estado` | Token ADMIN |
+| Citas | `GET /api/citas`, `GET /api/citas/:id`, `GET /api/citas/:id/pagos`, `GET /api/citas/:id/saldo`, `GET /api/citas/disponibilidad` | Token; pagos/saldo solo ADMIN o RECEPCION |
+| Citas | `POST /api/citas`, `PUT /api/citas/:id` | Token ADMIN o RECEPCION |
+| Citas | `PATCH /api/citas/:id/estado` | Token; reglas del rol y estado se validan en backend |
+| Solicitudes de cita | `POST /api/solicitudes-cita` | Público |
+| Solicitudes de cita | `GET /api/solicitudes-cita`, `PATCH /api/solicitudes-cita/:id/estado`, `POST /api/solicitudes-cita/:id/convertir` | Token ADMIN o RECEPCION |
+| Materiales | `GET /api/materiales` | Token |
+| Materiales | `POST /api/materiales`, `PUT /api/materiales/:id` | Token ADMIN |
+| Materiales | `POST /api/materiales/:id/asignar` | Token ADMIN o PROFESIONAL |
+| Pagos | `GET /api/pagos`, `GET /api/pagos/:id`, `POST /api/pagos`, `PATCH /api/pagos/:id/anular` | Token ADMIN o RECEPCION |
+| Pagos | `DELETE /api/pagos/:id` | Token; responde `405` porque los pagos se anulan, no se eliminan |
+| Cajas | `GET /api/cajas`, `GET /api/cajas/actual`, `GET /api/cajas/:id`, `GET /api/cajas/:id/movimientos`, `POST /api/cajas/abrir`, `POST /api/cajas/:id/cerrar` | Token ADMIN o RECEPCION |
+| Contenido | `GET /api/contenido` | Público |
+| Contenido | `PUT /api/contenido` | Token ADMIN |
+| Horarios | `GET /api/horarios` | Público |
+| Horarios | `PUT /api/horarios/:id` | Token ADMIN |
+| Contacto | `POST /api/contacto` | Público |
+| Contacto | `GET /api/contacto`, `PATCH /api/contacto/:id/leer` | Token ADMIN o RECEPCION |
+| Reportes | `GET /api/reportes/dashboard` | Token ADMIN o RECEPCION |
+
+Las rutas protegidas devuelven `401` cuando falta un token o es inválido/expiró y `403` cuando el rol no tiene permiso. Para ver cuerpos requeridos y validaciones de cada operación, consulta los controladores en `server/routes/`.
 
 ---
 
