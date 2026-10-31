@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
-import { Repository } from '../../../../../8vo Semestre/Desarrollo Web/sigca-main/server/data/repository';
+import { Repository } from '../data/repository';
 
 export const JWT_SECRET = process.env.JWT_SECRET || '';
 
