@@ -15,9 +15,9 @@
 
 | Integrante | Rol Asignado | Responsabilidades Principales |
 |---|---|---|
-| **Estudiante 1** | Backend & Base de Datos | Modelos Mongoose, API REST, persistencia MongoDB, endpoints de Pacientes, Responsables, Servicios y Contenido. |
-| **Estudiante 2** | Frontend & Integración | Interfaces Vue 3, Vue Router, Pinia, integración con API REST, formularios reactivos, portal público y calendario. |
-| **Estudiante 3** | Seguridad & Control Financiero | Autenticación JWT, RBAC, gestión de citas (RN-01 a RN-07), pagos, saldos, arqueo de caja diaria y pruebas automatizadas. |
+| **NERY GEOVANY OSORIO TECÚ 7690 23 22940** | Backend & Base de Datos | Modelos Mongoose, API REST, persistencia MongoDB, endpoints de Pacientes, Responsables, Servicios y Contenido. |
+| **MELVIN ESTEBAN RAMOS 7690 23 17316** | Frontend & Integración | Interfaces Vue 3, Vue Router, Pinia, integración con API REST, formularios reactivos, portal público y calendario. |
+| **CRUZ FRANCISCO ESTRADA GREGORIO** | Seguridad & Control Financiero | Autenticación JWT, RBAC, gestión de citas (RN-01 a RN-07), pagos, saldos, arqueo de caja diaria y pruebas automatizadas. |
 
 ---
 
@@ -31,90 +31,140 @@
 - **Contenedores**: [Docker](https://www.docker.com/) y Docker Compose con red interna y healthcheck.
 - **Pruebas y API**: Suite de pruebas automatizadas en TypeScript y colección exportada de Postman.
 
+## 📚 Manuales
+
+- [Manual de usuario](docs/manual_usuario.md): navegación, roles y flujos de trabajo del portal y administración.
+- [Manual técnico](docs/manual_tecnico.md): arquitectura, configuración, Docker, API y mantenimiento.
+
 ### Estado técnico actual
 
-- `npm run dev` inicia el backend integrado y Vite en el mismo origen.
+- `npm run dev` inicia el backend integrado y Vite en el mismo origen para desarrollo local.
 - El backend carga sus colecciones desde MongoDB al arrancar; MongoDB y una `JWT_SECRET` de 32 caracteres o más son obligatorios.
 - El login usa el contrato del backend integrado, restaura sesión con `/api/auth/me` y no asigna un rol ficticio.
 - En **Programar Cita** se puede seleccionar un paciente existente o registrar uno nuevo; para menores, el formulario pide y asocia los datos requeridos del responsable antes de guardar.
 - Si al consultar disponibilidad aparece `Cita no encontrada`, reinicia el backend con `npm run dev` para que cargue la ruta `/api/citas/disponibilidad`. Si ejecutas Docker, reconstruye el servicio de la aplicación.
-- Ambos archivos Compose apuntan a la aplicación integrada. Mongo no tiene autenticación. El arranque de producción se verificó con `NODE_ENV=production`; el build de la imagen Docker no se pudo validar en este entorno porque Docker no estaba disponible. El build local pasa.
-
----
-
-## 🔐 Credenciales de Demostración (Sección 11)
-
-| Rol | Correo Electrónico | Contraseña | Capacidades y Permisos |
-|---|---|---|---|
-| **ADMINISTRADOR** | `smorales@centroarmonia.com.gt` | `Admin123!` | Control total: usuarios, contenido, servicios, pacientes, citas, pagos, todas las cajas y reportes. |
-| **RECEPCIONISTA 1** | `recepcion@centroarmonia.com.gt` | `Recep123!` | Registro de pacientes, tutores, citas, cobros, comprobantes y apertura/cierre de su propia caja. |
-| **RECEPCIONISTA 2** | `recepcion2@centroarmonia.com.gt` | `Recep123!` | Cobros en caja alterna y programación de citas. |
-| **PROFESIONAL (EAV)** | `acastillo@centroarmonia.com.gt` | `Profe123!` | Consulta de su agenda personal, expediente básico de pacientes, marcar citas completadas y asignar materiales. |
-| **PROFESIONAL (Psicología)** | `evalencia@centroarmonia.com.gt` | `Profe123!` | Agenda de psicología infantil y neurodesarrollo. |
-| **PROFESIONAL (Lenguaje)**| `mramirez@centroarmonia.com.gt` | `Profe123!` | Agenda de terapia del lenguaje y articulación. |
-
-Estas credenciales provienen de las fixtures de demostración en `server/data/initialData.ts`. No deben usarse en despliegues.
+- `compose.yaml` levanta MongoDB y la aplicación web integrada. Mongo no tiene autenticación; esta configuración está pensada para desarrollo y demostraciones locales.
 
 ---
 
 ## 🚀 Instrucciones de Instalación y Ejecución
 
-### 1. Requisitos Previos
-- Node.js versión 18 o superior.
-- npm versión 9 o superior.
-- MongoDB instalado localmente (o Docker para ejecutar el contenedor de base de datos).
+Esta es la forma recomendada de probar el proyecto desde una computadora nueva. **Docker ejecuta MongoDB y la aplicación web**; no hace falta instalar Node.js ni correr `npm run dev` para usar esta opción.
 
-### 2. Variables de Entorno
-Copie el archivo de ejemplo:
+### 1. Instalar Git y Docker
+
+- Instala **Git** desde [git-scm.com](https://git-scm.com/downloads) si aún no está disponible en tu computadora.
+- En macOS o Windows, instala [Docker Desktop para Mac](https://docs.docker.com/desktop/setup/install/mac-install/) o [Docker Desktop para Windows](https://docs.docker.com/desktop/setup/install/windows-install/). En Linux, sigue la [guía oficial de Docker Engine](https://docs.docker.com/engine/install/).
+- Abre Docker Desktop y espera a que indique que Docker está iniciado. En Windows, mantén el modo de contenedores Linux, que es el predeterminado.
+
+Comprueba que las herramientas estén disponibles:
+
+```bash
+git --version
+docker compose version
+```
+
+### 2. Clonar el repositorio y preparar `.env`
+
+```bash
+git clone https://github.com/CFestradaG/sigca_gt.git
+cd sigca_gt
+```
+
+Crea el archivo de configuración a partir del ejemplo. En macOS o Linux:
+
 ```bash
 cp .env.example .env
-openssl rand -hex 32
-```
-Usa la salida de `openssl` como `JWT_SECRET` en `.env`. Para ejecutar sin Compose, inicia MongoDB accesible mediante `MONGODB_URI`. No publiques `.env`.
-
-### 3. Instalación de Dependencias
-```bash
-npm install
 ```
 
-### 4. Ejecución del Frontend
+En Windows PowerShell:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+Abre `.env`, busca `JWT_SECRET=` y pega una clave aleatoria de al menos 32 caracteres. En macOS o Linux puedes generar una con `openssl rand -hex 32`. En PowerShell, genera una clave con estos comandos y copia el resultado a `.env`:
+
+```powershell
+$bytes = New-Object byte[] 32
+$rng = [System.Security.Cryptography.RandomNumberGenerator]::Create()
+$rng.GetBytes($bytes)
+[BitConverter]::ToString($bytes).Replace('-', '').ToLowerInvariant()
+```
+
+Guarda `.env`; no compartas ni publiques ese archivo. Si el puerto `27017` ya está ocupado por otro MongoDB, cambia `MONGO_PORT=27017` por `MONGO_PORT=27018` en `.env`. La aplicación dentro de Docker usa la conexión interna de Compose y no requiere cambios adicionales.
+
+### 3. Construir e iniciar MongoDB y la web
+
+Desde la carpeta `sigca_gt`, ejecuta:
+
 ```bash
+docker compose -f compose.yaml up --build -d
+```
+
+La primera vez Docker descargará las imágenes y construirá la aplicación; puede tardar unos minutos. Comprueba que los servicios estén arriba:
+
+```bash
+docker compose -f compose.yaml ps
+```
+
+MongoDB debe aparecer como `healthy` y la app como `Up`. Abre [http://localhost:3000](http://localhost:3000). Para comprobar la API, visita [http://localhost:3000/api/health](http://localhost:3000/api/health); debe responder con `"status":"ok"`.
+
+### 4. Iniciar sesión y hacer una primera prueba
+
+Las cuentas de demostración se cargan automáticamente cuando las colecciones están vacías. Inicia sesión desde la web con una de estas cuentas:
+
+| Rol | Correo | Contraseña | Uso principal |
+|---|---|---|---|
+| **Administrador** | `smorales@centroarmonia.com.gt` | `Admin123!` | Administra usuarios, contenido, servicios, pacientes, citas, pagos, cajas y reportes. |
+| **Recepcionista 1** | `recepcion@centroarmonia.com.gt` | `Recep123!` | Registra pacientes y responsables, programa citas, cobra y gestiona su caja. |
+| **Recepcionista 2** | `recepcion2@centroarmonia.com.gt` | `Recep123!` | Programa citas y opera la caja alterna. |
+| **Profesional EAV** | `acastillo@centroarmonia.com.gt` | `Profe123!` | Consulta su agenda, actualiza citas y asigna materiales. |
+| **Profesional Psicología** | `evalencia@centroarmonia.com.gt` | `Profe123!` | Consulta la agenda de psicología infantil y neurodesarrollo. |
+| **Profesional Lenguaje** | `mramirez@centroarmonia.com.gt` | `Profe123!` | Consulta su agenda de terapia del lenguaje y articulación. |
+
+Para probar el flujo principal, entra como administrador y revisa servicios y usuarios; luego usa la cuenta de recepción para registrar un paciente y programar una cita. Estas credenciales son solo para demostración local; cámbialas antes de cualquier despliegue.
+
+### 5. Detener y volver a iniciar
+
+Para detener los servicios sin borrar la información guardada:
+
+```bash
+docker compose -f compose.yaml down
+```
+
+Para iniciarlos de nuevo:
+
+```bash
+docker compose -f compose.yaml up -d
+```
+
+MongoDB guarda la información en el volumen de Docker `mongo_data`. **No agregues `-v` a `down`** salvo que quieras borrar ese volumen y todos sus datos.
+
+### Solución de problemas comunes
+
+- **Docker daemon o `docker.sock` no disponible:** abre Docker Desktop y espera a que termine de iniciar; después repite el comando `up`.
+- **El puerto `27017` está ocupado:** cambia `MONGO_PORT=27017` por `MONGO_PORT=27018` en `.env` y vuelve a ejecutar `docker compose -f compose.yaml up -d`.
+- **El puerto `3000` está ocupado:** libera ese puerto o cambia `PORT=3000` por `PORT=3001` en `.env`; abre entonces `http://localhost:3001`.
+- **La web no carga o la app se reinicia:** revisa `docker compose -f compose.yaml ps` y `docker compose -f compose.yaml logs --tail=100 app`. Si el log dice `ENOTFOUND mongo`, recrea los contenedores y la red con `docker compose -f compose.yaml down` y luego `docker compose -f compose.yaml up --build -d`. Ese `down` conserva los datos; no uses `-v`.
+- **Quieres detener la salida continua de logs:** presiona `Ctrl+C`; esto no detiene los contenedores. Para detenerlos usa `docker compose -f compose.yaml down`.
+
+### Desarrollo local sin contenedor para la aplicación (opcional)
+
+Para modificar el código puedes ejecutar la app con Node.js 20 o superior y mantener MongoDB en Docker. Inicia solo la base de datos con `docker compose -f compose.yaml up -d mongo`, configura `JWT_SECRET` en `.env`, y luego ejecuta:
+
+```bash
+npm ci
 npm run dev
 ```
-La aplicación estará disponible en `http://localhost:3000`. El servidor requiere MongoDB y una `JWT_SECRET` válida.
 
-### 5. Scripts de datos y pruebas
+La web local estará en `http://localhost:3000`. No ejecutes al mismo tiempo este modo y la app de Compose: ambos usan el puerto 3000.
 
-`npm run seed` inserta fixtures solo en colecciones vacías. Para reiniciar los datos explícitamente, define `SEED_RESET=true`; eso elimina las colecciones SIGCA. `npm test` ejecuta `scripts/test-api.ts`.
+### Comandos adicionales de desarrollo
 
-### 6. Ejecución de Pruebas Automatizadas de Reglas de Negocio
-```bash
-npm test
-```
-La suite cubre reglas de citas, pagos, caja, autorización financiera y correlativos. Pasa completa (`22/22`).
-
----
-
-## 🐳 Despliegue con Docker y Docker Compose
-
-Para levantar tanto el servicio de MongoDB como la aplicación compilada con un solo comando:
-
-```bash
-docker compose up --build -d
-- Diseños y prototipos en [`docs/07-diseno`](docs/07-diseno/).
-- Issues y PRs por hito, con criterios de aceptación.
-- Capturas del portal, administración, calendario, pagos y caja.
-- Resultados de `npm test`, Postman y build de producción.
-- Tag `v1.0.0` y ZIP de Canvas al cierre.
-
-# Ver registros en tiempo real
-docker compose logs -f
-
-# Detener contenedores
-docker compose down
-```
-
-El Compose está configurado para levantar MongoDB y la aplicación integrada. El arranque de producción con `NODE_ENV=production` y `dist/` fue verificado; el build de la imagen Docker no se pudo validar en este entorno porque Docker no estaba disponible. El build local de frontend y backend sí pasa. Mongo no usa autenticación; esta configuración es para desarrollo/demo local.
+- `npm run seed` inserta fixtures solo en colecciones vacías. Para reiniciar los datos explícitamente, define `SEED_RESET=true`; eso elimina las colecciones SIGCA.
+- `npm test` ejecuta `scripts/test-api.ts`.
+- `npm run lint` revisa tipos y `npm run build` genera la compilación de producción.
 
 ---
 
